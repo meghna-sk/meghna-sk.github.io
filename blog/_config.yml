@@ -33,9 +33,10 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 #theme: minima
-remote_theme: niklasbuschmann/contrast
+remote_theme: niklasbuschmann/contrast@v2.11
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
