@@ -1,12 +1,12 @@
 # Site settings
 name: Meghna Kashyap
 title: Meghna Kashyap | Personal Website
-description: Final year undergraduate passionate about Full Stack Development and Web Security.
+description: Final year undergraduate passionate about Full Stack Development and Web Security
 url: https://meghna-sk.github.io/
 baseurl: ''
 email: kashyap.meghna13@gmail.com
 cover: https://meghna-sk.github.io/img/og.png
-logo: https://meghna-sk.github.io/img/emojis/technologist.png
+logo: https://meghna-sk.github.io/img/emojis/rainbow.png
 resume: https://meghna-sk.github.io/resume.pdf
 social:
   - title: email
