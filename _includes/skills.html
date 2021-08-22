@@ -20,17 +20,33 @@
         </ul>
       </div>
       <div class="skillz__category">
-        <div class="skillz__category__label">Tools</div>
+        <div class="skillz__category__label">Databases</div>
         <ul>
-          {% for tool in site.data.skills.tools %}
-          <li class="skillz__category__item">{{tool.item}}</li>
+          {% for framework in site.data.skills.databases %}
+          <li class="skillz__category__item">{{database.item}}</li>
           {% endfor %}
         </ul>
       </div>
       <div class="skillz__category">
-        <div class="skillz__category__label">Design</div>
+        <div class="skillz__category__label">Frameworks</div>
         <ul>
-          {% for thing in site.data.skills.design %}
+          {% for framework in site.data.skills.frameworks %}
+          <li class="skillz__category__item">{{framework.item}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="skillz__category">
+        <div class="skillz__category__label">Libraries</div>
+        <ul>
+          {% for tool in site.data.skills.libraries %}
+          <li class="skillz__category__item">{{library.item}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="skillz__category">
+        <div class="skillz__category__label">Other</div>
+        <ul>
+          {% for thing in site.data.skills.other %}
           <li class="skillz__category__item">{{thing.item}}</li>
           {% endfor %}
         </ul>
