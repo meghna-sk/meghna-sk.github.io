@@ -22,23 +22,15 @@
       <div class="skillz__category">
         <div class="skillz__category__label">Databases</div>
         <ul>
-          {% for framework in site.data.skills.databases %}
+          {% for database in site.data.skills.databases %}
           <li class="skillz__category__item">{{database.item}}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="skillz__category">
-        <div class="skillz__category__label">Frameworks</div>
-        <ul>
-          {% for framework in site.data.skills.frameworks %}
-          <li class="skillz__category__item">{{framework.item}}</li>
           {% endfor %}
         </ul>
       </div>
       <div class="skillz__category">
         <div class="skillz__category__label">Libraries</div>
         <ul>
-          {% for tool in site.data.skills.libraries %}
+          {% for library in site.data.skills.libraries %}
           <li class="skillz__category__item">{{library.item}}</li>
           {% endfor %}
         </ul>
