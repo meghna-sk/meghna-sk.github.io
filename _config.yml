@@ -1,0 +1,39 @@
+# Site settings
+name: Meghna Kashyap
+title: Meghna Kashyap | Personal Website
+description: Final year undergraduate passionate about Full Stack Development and Web Security.
+url: https://meghna-sk.github.io/
+baseurl: ''
+email: kashyap.meghna13@gmail.com
+cover: https://meghna-sk.github.io/img/og.png
+logo: https://meghna-sk.github.io/img/emojis/technologist.png
+resume: https://meghna-sk.github.io/resume.pdf
+social:
+  - title: email
+    url: mailto:kashyap.meghna13@gmail.com
+  - title: github
+    url: https://github.com/meghna-sk
+  - title: linkedin
+    url: https://www.linkedin.com/in/meghna-kashyap
+
+# Build settings
+markdown: kramdown
+
+exclude:
+  - 'Gemfile'
+  - 'Gemfile.lock'
+  - '*.gemspec'
+  - 'README.md'
+  - 'node_modules'
+  - 'build'
+  - 'gulpfile.js'
+  - 'package.json'
+
+keep_files:
+  - 'CNAME'
+  - '.git'
+  - '.gitignore'
+
+plugins_dir:
+  - jekyll-minifier
+  - jekyll-sitemap
