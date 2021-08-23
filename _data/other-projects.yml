@@ -16,7 +16,7 @@
   used:
     - thing: Python3
 
-- name: Online Proctoring & Facial Tracking for Examinations
+- name: Online Proctoring & Facial Tracking
   url: https://github.com/meghna-sk/Online-Proctoring-and-Facial-Tracking-
   code: https://github.com/meghna-sk/Online-Proctoring-and-Facial-Tracking-
   description:  Online proctoring and face tracking is used to authenticate if the candidate is the actual person taking the examination or assessment. It also detects malpractices using gaze analysis.
