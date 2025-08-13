@@ -1,15 +1,1225 @@
----
-layout: default
----
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meghna Suraj Kashyap • Portfolio</title>
+  <meta name="description" content="Front-end Developer & AI Product Builder — Showcasing cutting-edge web development skills" />
+  <!-- Prevent dark-mode flash -->
+  <script>
+    (()=>{
+      const t = localStorage.getItem('theme');
+      const m = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (t==='dark' || (!t && m)) document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <!-- Tailwind (class-based dark mode) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root{color-scheme:light dark}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    .card{box-shadow:0 1px 0 rgba(15,23,42,.04), 0 8px 24px rgba(15,23,42,.08)}
+    .chip{border:1px solid rgba(2,6,23,.08)}
+    .logo{filter:grayscale(100%);opacity:.9;transition:all .25s ease}
+    .logo:hover{filter:none;opacity:1;transform:translateY(-1px)}
+    .muted{color:#64748b}
+    .placeholder{opacity:.55}
+    .fun-gradient{background:conic-gradient(from 180deg at 50% 50%, #c7f0ff, #ffd6e8, #e7e2ff, #c7f0ff)}
+    .ring-gradient{background:linear-gradient(135deg, rgba(124,58,237,.6), rgba(236,72,153,.6), rgba(14,165,233,.6));}
+    .tilt{transform-style:preserve-3d; will-change:transform}
+    .tilt .tilt-child{transform:translateZ(30px)}
+    .reveal{opacity:1; transform:translateY(0); transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1)}
+    .reveal.show{opacity:1; transform:none}
+    .marquee{display:flex; overflow:hidden; user-select:none; gap:1rem}
+    .marquee__track{display:flex; gap:1rem; animation:marquee 18s linear infinite}
+    .marquee:hover .marquee__track{animation-play-state:paused}
+    @keyframes marquee{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+    
 
-<div id="site">
-  {% include switch.html %}
-  {% include intro.html %}
-  {% include background.html %}
-  {% include skills.html %}
-  {% include experience.html %}
-  {% include featured-projects.html %}
-  {% include other-projects.html %}
-  {% include footer.html %}
-  {% include top-button.html %}
-</div>
+    
+    /* Particle effects */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .particle {
+      position: absolute;
+      background: linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.3;
+    }
+    
+    .dark .particle {
+      opacity: 0.6;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    
+    /* Path animation */
+    .path-animation {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawPath 3s ease-in-out infinite;
+    }
+    
+    @keyframes drawPath {
+      0% { stroke-dashoffset: 1000; }
+      50% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -1000; }
+    }
+    
+    /* Enhanced button effects */
+    .timeline-btn {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .timeline-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .timeline-btn:hover::before {
+      left: 100%;
+    }
+    
+    /* Glow effect for active button */
+    .timeline-btn.active {
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+      border-color: #a855f7;
+    }
+    
+    /* Education-specific glow effects */
+    .timeline-btn[data-item="cmu"].active {
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+      border-color: #10b981;
+    }
+    
+    .timeline-btn[data-item="nitk"].active {
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+      border-color: #f59e0b;
+    }
+    
+    /* Connection line animations */
+    .connection-line {
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+    
+    .timeline-btn:hover + svg .connection-line,
+    .timeline-btn.active + svg .connection-line {
+      opacity: 1;
+      stroke-width: 3;
+    }
+    
+    /* Skill animations */
+    .skill-bar {
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .skill-progress {
+      background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+      height: 100%;
+      border-radius: 10px;
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    
+    .skill-progress::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    /* Typewriter effect */
+    .typewriter {
+      overflow: hidden;
+      border-right: 2px solid #8b5cf6;
+      white-space: nowrap;
+      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #8b5cf6; }
+    }
+    
+    /* Floating elements */
+    .float {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    /* Glow effects */
+    .glow {
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .glow:hover {
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(139, 92, 246, 0.1);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #8b5cf6, #06b6d4);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #7c3aed, #0891b2);
+    }
+    
+    /* Timeline animations */
+    .timeline-item {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease-out;
+    }
+    
+    .timeline-item.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .timeline-item:not(.reveal) {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    /* Fallback: ensure timeline items are visible */
+    .timeline-item {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+  </style>
+</head>
+  <body class="bg-[#fbf8ff] text-slate-900 dark:bg-[#0b1220] dark:text-slate-100 transition-colors duration-300">
+    <!-- Theme test indicator (temporary) -->
+    <div class="fixed top-20 right-4 z-50 px-3 py-1 rounded-full text-xs font-bold bg-red-500 text-white dark:bg-green-500">
+      <span class="block dark:hidden">LIGHT</span>
+      <span class="hidden dark:block">DARK</span>
+    </div>
+  <!-- Particle effects -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Scroll progress -->
+  <div class="fixed top-0 left-0 h-1 w-full bg-transparent z-[60]">
+    <div id="progress" class="h-1 w-0 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-sky-500"></div>
+  </div>
+
+  <!-- Ambient blobs -->
+  <div class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute -top-24 -right-20 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-70 fun-gradient dark:opacity-50"></div>
+    <div class="absolute -bottom-24 -left-20 h-[26rem] w-[26rem] rounded-full blur-3xl opacity-70 fun-gradient dark:opacity-40"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-black/5 dark:border-white/5 transition-colors duration-300">
+    <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="#intro" class="font-extrabold tracking-tight text-xl glow">MSK<span class="text-violet-500">.</span></a>
+      <div class="hidden md:flex gap-7 text-sm text-slate-700 dark:text-slate-300">
+        <a data-nav="intro" href="#intro" class="hover:text-slate-900 dark:hover:text-white transition-colors">Intro</a>
+        <a data-nav="timeline" href="#timeline" class="hover:text-slate-900 dark:hover:text-white transition-colors">Work Ex & Education</a>
+        <a data-nav="skills" href="#skills" class="hover:text-slate-900 dark:hover:text-white transition-colors">Skills</a>
+        <a data-nav="projects" href="#projects" class="hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a>
+        <a data-nav="contact" href="#contact" class="hover:text-slate-900 dark:hover:text-white transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2">
+          <svg class="h-4 w-4 text-slate-600 dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364-1.414-1.414M6.05 6.05 4.636 4.636m12.728 0-1.414 1.414M6.05 17.95 4.636 19.364"/>
+          </svg>
+          
+          <button id="themeToggle" class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 bg-slate-200 dark:bg-violet-600">
+            <span class="sr-only">Toggle theme</span>
+            <span id="themeToggleThumb" class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200 ease-in-out translate-x-0.5 dark:translate-x-5"></span>
+          </button>
+          
+          <svg class="h-4 w-4 text-slate-600 dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- INTRO -->
+  <section id="intro" class="relative reveal">
+    <div class="mx-auto max-w-6xl px-4 pt-14 pb-12 md:pt-24 md:pb-16">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left: greeting + name + contact -->
+        <div class="space-y-6">
+          <div class="space-y-2">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+              Hello 👋
+            </h1>
+            <h2 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-violet-600 dark:text-violet-400">
+              I'm Meghna
+            </h2>
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium">
+              Product Manager, Full-Stack Developer and AI Enthusiast
+            </p>
+          </div>
+          
+          <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+            Passionate about building AI-powered products that solve real-world problems. Turning complex ideas into elegant, user-friendly solutions that make a difference.
+          </p>
+          
+          <div class="flex items-center gap-6">
+            <a href="mailto:meghnakashyap@cmu.edu" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-violet-600 text-white rounded-lg font-semibold hover:from-violet-600 hover:to-violet-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <i class="fas fa-envelope"></i>
+              Get in Touch
+            </a>
+            
+            <div class="flex gap-4">
+              <a href="https://github.com/meghna-sk" class="text-2xl text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/meghna-kashyap/" class="text-2xl text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="MeghnaSurajKashyap_APM_Resume.pdf" class="text-2xl text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors" target="_blank" aria-label="Resume">
+                <i class="fas fa-file-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right: Profile Picture -->
+        <div class="flex justify-center">
+          <div class="relative group">
+            <!-- Background glow effect -->
+            <div class="absolute inset-0 bg-gradient-to-r from-violet-500/30 to-fuchsia-500/30 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-300"></div>
+            
+            <!-- Main image container -->
+            <div class="relative rounded-full p-3 ring-4 ring-violet-500/30 shadow-2xl bg-white/10 dark:bg-slate-900/20 backdrop-blur group-hover:ring-violet-500/50 transition-all duration-300">
+              <img src="profilePic.jpeg" alt="Meghna Suraj Kashyap" class="h-44 w-44 md:h-56 md:w-56 rounded-full object-cover shadow-lg" />
+            </div>
+            
+            <!-- Decorative badge -->
+            <div class="absolute -bottom-3 -right-3 w-10 h-10 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg border-2 border-white dark:border-slate-800">
+              <i class="fas fa-code"></i>
+            </div>
+            
+            <!-- Hover effect overlay -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-violet-500/0 to-fuchsia-500/0 group-hover:from-violet-500/10 group-hover:to-fuchsia-500/10 transition-all duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="mx-auto max-w-6xl px-4 py-12 reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center">Experience & Education</h2>
+    
+
+    
+    <!-- Timeline Container -->
+    <div class="relative">
+      <!-- Timeline Line -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-violet-500 via-sky-500 to-emerald-500"></div>
+      
+      <!-- Timeline Items -->
+      <div class="space-y-16">
+        <!-- CMU - Education (Aug 2024 - Dec 2025) -->
+        <div class="timeline-item group" data-item="cmu">
+          <div class="flex items-center justify-between">
+            <!-- Left Content -->
+            <div class="w-5/12 pr-8">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                  <img src="cmu.png" alt="CMU" class="h-16 w-16 object-contain">
+                  <div>
+                    <h3 class="text-xl font-bold text-sky-600 dark:text-sky-400">Master of Information Systems Management</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-400">Carnegie Mellon University</p>
+                    <p class="text-base text-slate-500">August 2024 – December 2025</p>
+                    <p class="text-base text-slate-500 font-semibold">GPA: 3.88/4.0</p>
+                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200">Education</span>
+                  </div>
+                </div>
+                
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Deans List - Fall Semester 2024, Spring Semester 2025</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Coursework: Product Management, Market Strategy, A/B Testing, Agentic Technology, Economic Analysis, Statistics</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Timeline Node -->
+            <div class="w-2/12 flex justify-center">
+              <div class="w-8 h-8 bg-sky-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            </div>
+            
+            <!-- Right Content (Empty for balance) -->
+            <div class="w-5/12 pl-8"></div>
+          </div>
+        </div>
+        
+        <!-- Intuit - Work Experience (May-Aug 2025) -->
+        <div class="timeline-item group" data-item="intuit">
+          <div class="flex items-center justify-between">
+            <!-- Left Content (Empty for balance) -->
+            <div class="w-5/12 pr-8"></div>
+            
+            <!-- Timeline Node -->
+            <div class="w-2/12 flex justify-center">
+              <div class="w-8 h-8 bg-violet-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            </div>
+            
+            <!-- Right Content -->
+            <div class="w-5/12 pl-8">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                  <img src="intuit.png" alt="Intuit" class="h-16 w-16 object-contain">
+                  <div>
+                    <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400">Technical Product Manager Intern</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-400">Intuit</p>
+                    <p class="text-base text-slate-500">May - Aug 2025</p>
+                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
+                  </div>
+                </div>
+                
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Conducted user research with 25 TPMs to understand gaps in documentation and workflow tools, prioritizing opportunities to improve knowledge management and reduce friction for web-based internal tools.</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Designed and launched AI-powered tools to streamline TPM workflows, boosting knowledge sharing by 50% and reducing manual work by 30%. Solution was adopted across Intuit to support scalable, self-serve program enablement.</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Standardized and launched a centralized knowledge repository with guides, playbooks, and onboarding, improving discoverability, version control, and cross-team adoption for fiscal year 2026 programs.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Philips - Work Experience (Jan-Apr 2025) -->
+        <div class="timeline-item group" data-item="philips">
+          <div class="flex items-center justify-between">
+            <!-- Left Content -->
+            <div class="w-5/12 pr-8">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                  <img src="philips.png" alt="Philips" class="h-16 w-16 object-contain">
+                  <div>
+                    <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400">Project Manager</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-400">Philips (CSL)</p>
+                    <p class="text-base text-slate-500">Jan - Apr 2025</p>
+                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
+                  </div>
+                </div>
+                
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Conducted internal user research with Philips employees and analyzed platform metrics to identify backlog management gaps and uncover GenAI opportunities across 10+ product teams.</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Defined product vision and strategy, created wireframes, and collaborated with designers and engineers to develop a prototype AI backlog tool with intelligent categorization and semantic search.</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Delivered stakeholder presentations and market analysis to Philips leadership, aligning on product strategy and showcasing a solution projected to reduce backlog search time by 40%.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Timeline Node -->
+            <div class="w-2/12 flex justify-center">
+              <div class="w-8 h-8 bg-violet-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            </div>
+            
+            <!-- Right Content (Empty for balance) -->
+            <div class="w-5/12 pl-8"></div>
+          </div>
+        </div>
+        
+        <!-- Wells Fargo - Work Experience (2022-2024) -->
+        <div class="timeline-item group" data-item="wellsfargo">
+          <div class="flex items-center justify-between">
+            <!-- Left Content (Empty for balance) -->
+            <div class="w-5/12 pr-8"></div>
+            
+            <!-- Timeline Node -->
+            <div class="w-2/12 flex justify-center">
+              <div class="w-8 h-8 bg-violet-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            </div>
+            
+            <!-- Right Content -->
+            <div class="w-5/12 pl-8">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                  <img src="wellsfargo.png" alt="Wells Fargo" class="h-16 w-16 object-contain">
+                  <div>
+                    <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400">Product Engineer</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-400">Wells Fargo</p>
+                    <p class="text-base text-slate-500">July 2022 – May 2024</p>
+                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
+                  </div>
+                </div>
+                
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Led cross-continental teams (10+ engineers/designers in US & India) to analyze customer behavior and define requirements for B2C online banking features, achieving $100K+ annual cost savings and streamlining direct deposit payment processing.</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Developed detailed user stories and acceptance criteria for direct deposit rejection systems, modernizing ETL processes and automating manual workflows to enable proactive outreach to 300+ customers/week.</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Spearheaded Agile and CI/CD practices to deliver iterative improvements to the IVR system, boosting performance KPIs (20% faster response times) and ensuring minimal downtime feature rollouts.</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Optimized product roadmaps and sprint planning, driving end-to-end product delivery with a 12% efficiency gain, increased user adoption, and improved team velocity by +13 story points per sprint through refined backlog prioritization.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- NITK - Education (2018-2022) -->
+        <div class="timeline-item group" data-item="nitk">
+          <div class="flex items-center justify-between">
+            <!-- Left Content -->
+            <div class="w-5/12 pr-8">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                  <img src="nitk.png" alt="NITK" class="h-16 w-16 object-contain">
+                  <div>
+                    <h3 class="text-xl font-bold text-sky-600 dark:text-sky-400">Bachelor of Technology, Information Technology</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-400">National Institute of Technology Karnataka</p>
+                    <p class="text-base text-slate-500">August 2018 - May 2022</p>
+                    <p class="text-base text-slate-500 font-semibold">GPA: 8.17/10.0</p>
+                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200">Education</span>
+                  </div>
+                </div>
+                
+                <div class="space-y-3">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-sm text-slate-700 dark:text-slate-300">Coursework: Data Analytics, Database Management, Machine Learning, Information Retrieval, Engineering Management</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Timeline Node -->
+            <div class="w-2/12 flex justify-center">
+              <div class="w-8 h-8 bg-sky-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            </div>
+            
+            <!-- Right Content (Empty for balance) -->
+            <div class="w-5/12 pl-8"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="mx-auto max-w-6xl px-4 py-12 reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center">My Skills</h2>
+    
+    <!-- Skills Grid -->
+    <div class="space-y-12">
+      <!-- Product Management -->
+      <div>
+        <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400 mb-6 text-center">Product Management</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <!-- Product Strategy -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-route text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Product Strategy</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Roadmaps & Planning</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Market Research -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-search text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Market Research</h4>
+              <p class="text-white/80 text-xs leading-relaxed">User & Market Analysis</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- A/B Testing -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-chart-line text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">A/B Testing</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Experimentation</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Metrics & KPIs -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-tachometer-alt text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Metrics & KPIs</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Performance Tracking</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Prototyping -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-palette text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Prototyping</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Design & Mockups</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 to-rose-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Program Management -->
+      <div>
+        <h3 class="text-xl font-bold text-sky-600 dark:text-sky-400 mb-6 text-center">Program Management</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
+          <!-- Agile & Scrum -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-sync-alt text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Agile & Scrum</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Methodology</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-sky-600 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Jira -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-tasks text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Jira</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Project Tracking</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Confluence -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-book text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Confluence</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Documentation</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Kanban -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-columns text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Kanban</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Visual Workflow</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Google Workspace -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fab fa-google text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Google Workspace</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Collaboration</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- MS Office -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-file-word text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">MS Office</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Productivity</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-700 to-blue-800 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Smartsheet -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-table text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Smartsheet</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Project Management</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Technical Skills -->
+      <div>
+        <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-6 text-center">Technical Skills</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <!-- SQL -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-database text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">SQL</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Database Queries</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Teradata -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-server text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Teradata</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Data Warehouse</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Power BI -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-chart-bar text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Power BI</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Data Visualization</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Tableau -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-chart-pie text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Tableau</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Analytics Platform</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Microsoft 365 -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-microsoft text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Microsoft 365</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Productivity Suite</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Python -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fab fa-python text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Python</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Programming</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Java -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fab fa-java text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Java</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Programming</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- C++ -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <span class="text-white font-bold text-lg">C++</span>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">C++</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Programming</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-700 to-blue-800 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- JavaScript -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <span class="text-black font-bold text-sm">JS</span>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">JavaScript</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Programming</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Git -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fab fa-git-alt text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Git</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Version Control</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- MS Azure -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fas fa-cloud text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">MS Azure</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Cloud Platform</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+          <!-- Figma -->
+          <div class="group relative">
+            <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
+                <i class="fab fa-figma text-white text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-sm mb-2">Figma</h4>
+              <p class="text-white/80 text-xs leading-relaxed">Design Tool</p>
+            </div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </section> 
+
+
+
+
+
+  <!-- PROJECTS -->
+  <section id="projects" class="mx-auto max-w-6xl px-4 py-12 reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Featured Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project 1 -->
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow">
+        <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-xl font-bold">AI Multi-Agent Financial Advisor</h3>
+            <div class="flex gap-2">
+              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Built a prototype AI-driven personal finance platform featuring multi-agent financial advisors that provide users with tailored insights on budgeting, investments, debt, and savings. Conducted user testing with 20 individuals; feedback showed 85% felt the tailored recommendations improved their financial planning confidence.
+          </p>
+          <div class="flex flex-wrap gap-2 text-[11px]">
+            <span class="chip rounded-full px-2 py-1 bg-[#f2ecff] dark:bg-violet-500/20">AI/ML</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#e5f6ff] dark:bg-sky-500/20">Multi-Agent</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#ffe9f3] dark:bg-fuchsia-500/20">User Testing</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow">
+        <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-xl font-bold">A/B Testing Emotion vs. Science in Skincare</h3>
+            <div class="flex gap-2">
+              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
+                <i class="fas fa-file-powerpoint"></i>
+              </a>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            An A/B test showed emotional language boosted purchase intent, while scientific language improved trust and perceived effectiveness—helping skincare brands craft messages that both persuade and build credibility.
+          </p>
+          <div class="flex flex-wrap gap-2 text-[11px]">
+            <span class="chip rounded-full px-2 py-1 bg-[#e5fff3] dark:bg-emerald-500/20">A/B Testing</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#fff7e5] dark:bg-amber-500/20">Data Analysis</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#e7f0ff] dark:bg-indigo-500/20">Product Strategy</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow">
+        <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-xl font-bold">AI Portfolio Rebalancer</h3>
+            <div class="flex gap-2">
+              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            AI assistant using LangChain that analyzes and suggests adjustments to stock portfolios based on real-time market data. Integrates multiple LLMs (Claude 3 Opus, Groq LLaMA3-8B, and LLaMA3-70B) and dynamically selects tools to evaluate portfolios and recommend rebalancing actions.
+          </p>
+          <div class="flex flex-wrap gap-2 text-[11px]">
+            <span class="chip rounded-full px-2 py-1 bg-[#ecfbff] dark:bg-sky-400/20">LangChain</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#f6ecff] dark:bg-violet-500/20">Multi-LLM</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#ffeef4] dark:bg-rose-400/20">Financial AI</span>
+          </div>
+        </div>
+      </article>
+
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-6xl px-4 py-12 reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Get In Touch</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+          I'm always interested in new opportunities and exciting projects. Let's connect and build something amazing together!
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-violet-600 rounded-lg flex items-center justify-center text-white">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <p class="font-semibold">Email</p>
+              <a href="mailto:meghnakashyap@cmu.edu" class="text-gray-600 dark:text-gray-400 hover:text-violet-600 transition-colors">
+                meghnakashyap@cmu.edu
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div>
+              <p class="font-semibold">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/meghna-kashyap/" class="text-gray-600 dark:text-gray-400 hover:text-violet-600 transition-colors" target="_blank">
+                linkedin.com/in/meghna-kashyap/
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-white">
+              <i class="fab fa-github"></i>
+            </div>
+            <div>
+              <p class="font-semibold">GitHub</p>
+              <a href="https://github.com/meghna-sk" class="text-gray-600 dark:text-gray-400 hover:text-violet-600 transition-colors" target="_blank">
+                github.com/meghna-sk
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card rounded-2xl border border-slate-200 bg-white dark:bg-white/5 dark:border-white/10 p-6">
+        <h3 class="text-xl font-bold mb-4">Send me a message</h3>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-2">Name</label>
+            <input type="text" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors" placeholder="Your name">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Email</label>
+            <input type="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors" placeholder="your.email@example.com">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Message</label>
+            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors" placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-gradient-to-r from-violet-500 to-violet-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-violet-600 hover:to-violet-700 transition-all duration-200 transform hover:scale-[1.02]">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-xs muted">
+    © <span id="year"></span> Meghna Suraj Kashyap • Built with ❤️ and modern web technologies
+  </footer>
+
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const toggleThumb = document.getElementById('themeToggleThumb');
+    
+    // Set initial state based on current theme
+    const updateToggleState = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      toggleThumb.style.transform = isDark ? 'translateX(1.25rem)' : 'translateX(0.125rem)';
+      console.log('Theme:', isDark ? 'dark' : 'light', 'HTML classes:', document.documentElement.classList.toString());
+    };
+    
+    // Initialize toggle state
+    updateToggleState();
+    
+    toggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      
+      if (isDark) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      
+      updateToggleState();
+    });
+
+    // Scroll progress bar
+    const progress = document.getElementById('progress');
+    const scrollProgress = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+      progress.style.width = (scrolled * 100) + '%';
+    };
+    document.addEventListener('scroll', scrollProgress, { passive: true });
+    scrollProgress();
+
+    // Section reveal + nav highlight
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('reveal');
+          const id = e.target.id;
+          document.querySelectorAll('a[data-nav]').forEach(a=>{
+            a.classList.toggle('text-violet-600', a.getAttribute('data-nav')===id);
+          });
+        }
+      });
+    }, { threshold:.2 });
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    // Timeline items reveal
+    const timelineObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('reveal');
+          console.log('Timeline item revealed:', e.target);
+        }
+      });
+    }, { threshold:.1 });
+    
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    console.log('Found timeline items:', timelineItems.length);
+    timelineItems.forEach(el=>timelineObserver.observe(el));
+
+    // Tiny 3D tilt
+    const tilts = document.querySelectorAll('.tilt');
+    tilts.forEach((el)=>{
+      const r = 10; // max tilt deg
+      el.addEventListener('mousemove', (e)=>{
+        const b = el.getBoundingClientRect();
+        const x = (e.clientX - b.left)/b.width - .5;
+        const y = (e.clientY - b.top)/b.height - .5;
+        el.style.transform = `perspective(800px) rotateX(${(-y*r).toFixed(2)}deg) rotateY(${(x*r).toFixed(2)}deg)`;
+      });
+      el.addEventListener('mouseleave', ()=>{ el.style.transform=''; });
+    });
+
+    // Skill bar animations
+    const skillBars = document.querySelectorAll('.skill-progress');
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const width = entry.target.getAttribute('data-width');
+          entry.target.style.width = width + '%';
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    skillBars.forEach(bar => skillObserver.observe(bar));
+
+    // Particle effects
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        const size = Math.random() * 4 + 2;
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        const delay = Math.random() * 6;
+        
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.animationDelay = delay + 's';
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    createParticles();
+
+    // Form submission
+    const contactForm = document.querySelector('form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Add your form submission logic here
+      alert('Thank you for your message! I\'ll get back to you soon.');
+    });
+
+
+
+    // Timeline section - Static display (no JavaScript needed)
+    console.log('Timeline section loaded successfully');
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    }); // Close DOMContentLoaded
+  </script>
+</body>
+</html> 

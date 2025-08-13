@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meghna Suraj Kashyap • Portfolio</title>
+  <meta name="description" content="Intro • Education • Work • Projects — by Meghna Suraj Kashyap" />
+  <!-- Prevent dark-mode flash -->
+  <script>
+    (()=>{
+      const t = localStorage.getItem('theme');
+      const m = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (t==='dark' || (!t && m)) document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <!-- Tailwind (class-based dark mode) -->
+  <script>
+    tailwind = { config: { darkMode: 'class' } };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:light dark}
+    html{scroll-behavior:smooth}
+    body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    .card{box-shadow:0 1px 0 rgba(15,23,42,.04), 0 8px 24px rgba(15,23,42,.08)}
+    .chip{border:1px solid rgba(2,6,23,.08)}
+    .logo{filter:grayscale(100%);opacity:.9;transition:all .25s ease}
+    .logo:hover{filter:none;opacity:1;transform:translateY(-1px)}
+    .muted{color:#64748b}
+    .placeholder{opacity:.55}
+    .fun-gradient{background:conic-gradient(from 180deg at 50% 50%, #c7f0ff, #ffd6e8, #e7e2ff, #c7f0ff)}
+    .ring-gradient{background:linear-gradient(135deg, rgba(124,58,237,.6), rgba(236,72,153,.6), rgba(14,165,233,.6));}
+    .tilt{transform-style:preserve-3d; will-change:transform}
+    .tilt .tilt-child{transform:translateZ(30px)}
+    .reveal{opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1)}
+    .reveal.show{opacity:1; transform:none}
+    .marquee{display:flex; overflow:hidden; user-select:none; gap:1rem}
+    .marquee__track{display:flex; gap:1rem; animation:marquee 18s linear infinite}
+    .marquee:hover .marquee__track{animation-play-state:paused}
+    @keyframes marquee{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+  </style>
+</head>
+<body class="bg-[#fbf8ff] text-slate-900 dark:bg-[#0b1220] dark:text-slate-100">
+  <!-- Scroll progress -->
+  <div class="fixed top-0 left-0 h-1 w-full bg-transparent z-[60]">
+    <div id="progress" class="h-1 w-0 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-sky-500"></div>
+  </div>
+
+  <!-- Ambient blobs -->
+  <div class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute -top-24 -right-20 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-70 fun-gradient dark:opacity-50"></div>
+    <div class="absolute -bottom-24 -left-20 h-[26rem] w-[26rem] rounded-full blur-3xl opacity-70 fun-gradient dark:opacity-40"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-black/5 dark:border-white/5">
+    <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="#intro" class="font-extrabold tracking-tight text-xl">MSK<span class="text-violet-500">.</span></a>
+      <div class="hidden md:flex gap-7 text-sm text-slate-700 dark:text-slate-300">
+        <a data-nav="intro" href="#intro" class="hover:text-slate-900 dark:hover:text-white">Intro</a>
+        <a data-nav="education" href="#education" class="hover:text-slate-900 dark:hover:text-white">Education</a>
+        <a data-nav="experience" href="#experience" class="hover:text-slate-900 dark:hover:text-white">Work</a>
+        <a data-nav="projects" href="#projects" class="hover:text-slate-900 dark:hover:text-white">Projects</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" class="rounded-xl border border-slate-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 px-3 py-2 text-sm flex items-center gap-2 hover:scale-[1.02] transition">
+          <svg id="sun" class="h-4 w-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364-1.414-1.414M6.05 6.05 4.636 4.636m12.728 0-1.414 1.414M6.05 17.95 4.636 19.364"/></svg>
+          <svg id="moon" class="h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span class="hidden sm:block">Theme</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- INTRO -->
+  <section id="intro" class="relative reveal">
+    <div class="mx-auto max-w-6xl px-4 pt-14 pb-12 md:pt-24 md:pb-16">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <!-- Left: greeting + name + contact -->
+        <div>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">Hey there! <span aria-label="waving hand" role="img">👋</span></h1>
+          <h2 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mt-2">I'm Meghna</h2>
+          <p class="mt-6 text-slate-600 dark:text-slate-400 text-base">Get in touch <span aria-hidden="true">👉</span> <a class="underline decoration-2 underline-offset-4 hover:no-underline" href="mailto:meghnakashyap@cmu.edu">meghnakashyap@cmu.edu</a></p>
+        </div>
+        <!-- Right: one-liner + avatar pinned bottom-right -->
+        <div class="relative min-h-[220px] md:min-h-[320px]">
+          <p class="max-w-md text-slate-700 dark:text-slate-300">AI‑native product builder with full‑stack chops — frontend, APIs, and data. <span aria-label="woman technologist" role="img">👩🏻‍💻</span></p>
+          <div class="absolute bottom-0 right-0">
+            <div class="rounded-full p-1 ring-1 ring-black/10 dark:ring-white/10 shadow-xl bg-white/70 dark:bg-slate-900/60 backdrop-blur">
+              <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFRUWGBgXFxgYGBgXGBcXGBgYGBgYGBgdHSggGBolHBgXITEhJSorLi4uGh8zODMtNygtLisBCgoKDg0OGxAQGy0lICYtLS0vLS0tLS8tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAQkAvgMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAABQYBAv/EACgQAAICAgICAQQDAQAAAAAAAAECAAMRBBIhBRMxQVEiMmFxgZGh0f/EABgBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAHxEBAAIDAAMBAAAAAAAAAAAAAQIRIQMSMUEyUXH/2gAMAwEAAhEDEQA/APeYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABuXkqkq3r2pJ5W9qN2L6y1x2m3lqIh0o0l7rQ3aQZbC7v9W+vRj4mT9d0f0sX8f3f0qv2p1r0c1GkN3p9u2l2bUeU0bq1JXv6bB9mQe2M3fJ6t1bq0UqQqVd8mGSkp4q3Y7uE0bG2r3V0M7nV8lq8e2Y2M5rP3m2o7K1Wk1VxWvS5u7R8m1mG8uO2wzj1u5mVbU7NRqVqVbqV1PpNR0l7m7r3b6x8v3lqfK6a8SgAAAAAAAAAAAAAAAAAAAAAAAB2q5b2k2a1qY2m0jK5S3SLY9i8m0pQ1K0pJXlSXXn+KfYc8s9b1c7nIh2S7a9k2y3Kk2a0o1a1qUpaU6qYkkl5c7c3u3m5bZ8Xn2H6X7C6zWm1UqValtSUpRUlJJLqSSSSSSSSSSSSSSSSSvNUY6V9G8zq2c9k6m6Zp2pWm1KpWlKUpRUlJJLqSSSSSSSSSSSSSSSSS8p4z0u6a8n1mYHk8Wb5t5f4Q0X4qW9V6dWq1GpWqUpSlFSUkkupJJJJJJJJJJJJJJJJJfHfB0tZ+N5b7b7b9l4q08r0vN1q1GpWqUpSlFSUkkupJJJJJJJJJJJJJJJJJXnq2t1vX5e8U1a3p1qtRqVqlKUpSlFSUkkupJJJJJJJJJJJJJJJJJ4m0q0Y4r1i9P2Pp9Qm3b7r6v1T6fQ9mP0cGgAAAAAAAAAAAAAAAAAAABw3r0b6U1uYbq3t9m1Hccx3f8A7n3F+3b7a7b69n6Xo9nYw8F2AAAAAAAAAAAAAAABw3z5b2vY6jXU6zT8tLr9dUq1apSlKUUpSSS6kkkkkkkkkkkkkkkvn+Xzj5yHn6kq3V7r7t9D9Nn6HTm3j9b1VAAAAAAAAAAAAAAABw3V0bq1yX3p6m7bK1Y8bJrX9Gm1apWlKUpSlFSUkkupJJJJJJJJJJJJJJJJJXle2fM4Yk3w9p7l7v9fSe3zv0tqAAAAAAAAAAAAAAADg3n3b3V9Hq1Wq1GpWqUpSlKUUpSSS6kkkkkkkkkkkkkkkkr5f+f8A8Yf6u9p9O9n6XofR6f0wAAAAAAAAAAAAAAAHj9Wk7r9bq1GpWqUpSlKUUpSSS6kkkkkkkkkkkkkkkkr5f5fPj5wAAAAAAAAAAAAAAAAAAAAAAAAAAH//2Q==" alt="Meghna Suraj Kashyap headshot" class="h-28 w-28 md:h-40 md:w-40 rounded-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="mx-auto max-w-6xl px-4 py-12 reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Education</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="tilt card rounded-2xl border border-slate-200 bg-white dark:bg-white/5 dark:border-white/10 p-5">
+        <div class="flex items-center gap-2"><img src="assets/cmu.svg" class="h-5 logo" alt="CMU"/><h3 class="font-bold">Carnegie Mellon University</h3></div>
+        <div class="text-sm muted mt-1">MISM • 2024 – 2025</div>
+        <ul class="list-disc list-inside text-sm mt-2 space-y-1"><li>Focus: AI product management</li><li>Courses: Product Management, Market Strategy, A/B Testing, Agentic Technology, Economic Analysis, Statistics</li></ul>
+      </div>
+      <div class="tilt card rounded-2xl border border-slate-200 bg-white dark:bg-white/5 dark:border-white/10 p-5">
+        <div class="flex items-center gap-2"><img src="assets/nitk.svg" class="h-5 logo" alt="NITK"/><h3 class="font-bold">NIT Karnataka</h3></div>
+        <div class="text-sm muted mt-1">B.Tech IT • 2018 – 2022</div>
+        <ul class="list-disc list-inside text-sm mt-2 space-y-1"><li>Focus: Full stack development and data analytics</li><li>Courses: Data Analytics, Database Management, Machine Learning, Information Retrieval, Engineering Management</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="mx-auto max-w-6xl px-4 py-12 reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Work Experience</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="tilt rounded-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 to-sky-500/10 pointer-events-none"></div>
+        <div class="card rounded-2xl border border-slate-200 bg-white dark:bg-white/5 dark:border-white/10 p-5 tilt-child">
+          <div class="flex items-center gap-2 text-sm muted"><img src="assets/intuit.svg" class="h-4 logo" alt="Intuit"/> May – Aug 2025</div>
+          <h3 class="text-lg font-bold">Intuit • TPM Intern</h3>
+          <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+            <li class="placeholder">Add outcome</li>
+            <li class="placeholder">Add scope</li>
+          </ul>
+        </div>
+      </article>
+      <article class="tilt rounded-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-emerald-500/10 pointer-events-none"></div>
+        <div class="card rounded-2xl border border-slate-200 bg-white dark:bg-white/5 dark:border-white/10 p-5 tilt-child">
+          <div class="flex items-center gap-2 text-sm muted"><img src="assets/philips.svg" class="h-4 logo" alt="Philips"/> Jan – Apr 2025</div>
+          <h3 class="text-lg font-bold">Philips (CSL) • Project Manager</h3>
+          <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+            <li class="placeholder">Add outcome</li>
+            <li class="placeholder">Add scope</li>
+          </ul>
+        </div>
+      </article>
+      <article class="tilt rounded-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-amber-500/10 pointer-events-none"></div>
+        <div class="card rounded-2xl border border-slate-200 bg-white dark:bg-white/5 dark:border-white/10 p-5 tilt-child">
+          <div class="flex items-center gap-2 text-sm muted"><img src="assets/wellsfargo.svg" class="h-4 logo" alt="Wells Fargo"/> 2022 – 2024</div>
+          <h3 class="text-lg font-bold">Wells Fargo • Product Engineer</h3>
+          <ul class="list-disc list-inside text-sm mt-2 space-y-1">
+            <li class="placeholder">Add outcome</li>
+            <li class="placeholder">Add scope</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="mx-auto max-w-6xl px-4 py-12 reveal">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Projects</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Project Card Template -->
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px]">
+        <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">Project One</h3>
+            <svg class="h-5 w-5 opacity-60 group-hover:rotate-12 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 19V6"/><path d="m5 12 7-7 7 7"/></svg>
+          </div>
+          <p class="text-sm mt-1"><span class="placeholder">One line problem statement</span></p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+            <span class="chip rounded-full px-2 py-1 bg-[#f2ecff] dark:bg-violet-500/20">Frontend</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#e5f6ff] dark:bg-sky-500/20">Backend</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#ffe9f3] dark:bg-fuchsia-500/20">Data</span>
+          </div>
+        </div>
+      </article>
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px]">
+        <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">Project Two</h3>
+            <svg class="h-5 w-5 opacity-60 group-hover:rotate-12 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 19V6"/><path d="m5 12 7-7 7 7"/></svg>
+          </div>
+          <p class="text-sm mt-1"><span class="placeholder">One line problem statement</span></p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+            <span class="chip rounded-full px-2 py-1 bg-[#e5fff3] dark:bg-emerald-500/20">AI</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#fff7e5] dark:bg-amber-500/20">Search</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#e7f0ff] dark:bg-indigo-500/20">Cloud</span>
+          </div>
+        </div>
+      </article>
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px]">
+        <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold">Project Three</h3>
+            <svg class="h-5 w-5 opacity-60 group-hover:rotate-12 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 19V6"/><path d="m5 12 7-7 7 7"/></svg>
+          </div>
+          <p class="text-sm mt-1"><span class="placeholder">One line problem statement</span></p>
+          <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+            <span class="chip rounded-full px-2 py-1 bg-[#ecfbff] dark:bg-sky-400/20">Agents</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#f6ecff] dark:bg-violet-400/20">APIs</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#ffeef4] dark:bg-rose-400/20">UX</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-xs muted">
+    © <span id="year"></span> Meghna Suraj Kashyap
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+      const c = document.documentElement.classList;
+      const dark = c.toggle('dark');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    });
+
+    // Scroll progress bar
+    const progress = document.getElementById('progress');
+    const scrollProgress = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+      progress.style.width = (scrolled * 100) + '%';
+    };
+    document.addEventListener('scroll', scrollProgress, { passive: true });
+    scrollProgress();
+
+    // Section reveal + nav highlight
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('show');
+          const id = e.target.id;
+          document.querySelectorAll('a[data-nav]').forEach(a=>{
+            a.classList.toggle('text-violet-600', a.getAttribute('data-nav')===id);
+          });
+        }
+      });
+    }, { threshold:.2 });
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    // Tiny 3D tilt
+    const tilts = document.querySelectorAll('.tilt');
+    tilts.forEach((el)=>{
+      const r = 10; // max tilt deg
+      el.addEventListener('mousemove', (e)=>{
+        const b = el.getBoundingClientRect();
+        const x = (e.clientX - b.left)/b.width - .5;
+        const y = (e.clientY - b.top)/b.height - .5;
+        el.style.transform = `perspective(800px) rotateX(${(-y*r).toFixed(2)}deg) rotateY(${(x*r).toFixed(2)}deg)`;
+      });
+      el.addEventListener('mouseleave', ()=>{ el.style.transform=''; });
+    });
+  </script>
+</body>
+</html>
