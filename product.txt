@@ -1,0 +1,617 @@
+ 
+
+Product Management Essentials course
+
+
+
+Product Idea Workbook
+
+By Meghna Suraj Kashyap
+
+
+ 
+
+Table of Contents
+
+Product Management Essentials I
+Product Narrative	3
+1. Customer Problem Space	6
+2. Market Space	9
+3. Solution Space	14
+4. Customer Value Space	17
+Appendix	19
+
+ 
+Product Narrative
+
+The Problem
+Graduate students face a constant struggle to balance affordability, nutrition, and time when it comes to meal planning. With the rising cost of living, students frequently overspend on food, often exceeding their budgets by $25-$50 per week. Traditional meal planning is time-consuming, and existing solutions fail to integrate real-time grocery cost tracking, making it difficult for students to optimize their spending.
+The lack of financial and nutritional awareness in meal planning leads to over $2.1 billion in unnecessary spending annually across U.S. graduate students. This financial burden is coupled with the inconvenience of manually tracking meal expenses and shopping lists, resulting in wasted time, suboptimal meal choices, and unhealthy eating habits.
+Students need a simple, automated way to plan meals efficiently while ensuring they stay within budget and meet their dietary needs. Current solutions like Mealime and PlateJoy provide meal-planning features, but they do not address the growing need for cost-conscious meal optimization. Without a way to link meal plans to real-time grocery prices, students continue to overspend and struggle with planning balanced meals.
+
+The Solution
+MealWise is a smart, budget-conscious meal planning app that empowers graduate students to make healthier, cost-effective food choices effortlessly. Unlike existing apps, MealWise integrates real-time grocery pricing data, allowing users to create optimized meal plans that fit their budget while meeting nutritional goals.
+With MealWise, students can:
+•	Plan affordable meals in minutes using an AI-driven meal recommendation engine.
+•	Track grocery prices in real-time, ensuring they stay within budget.
+•	Receive personalized nutrition insights based on dietary preferences.
+•	Generate grocery lists instantly and compare store prices for the best deals.
+•	Seamlessly integrate with Google Calendar, allowing users to schedule meal prep efficiently.
+
+How It Works
+MealWise is designed with a simple, intuitive workflow:
+1.	Users enter dietary preferences (eg - vegetarian, high-protein, gluten-free) and budget constraints.
+2.	AI generates meal plans that optimize cost and nutritional balance.
+3.	Grocery price tracking ensures students get the best deals by integrating local store pricing.
+4.	Users receive a customized shopping list with cost estimates, helping them make informed decisions.
+5.	MealWise syncs with calendars, allowing students to allocate time for meal preparation efficiently.
+With MealWise, students can save up to $2,600 annually, reducing food waste and improving their overall meal planning experience.
+
+The Value
+MealWise offers a high-impact solution by addressing the three major challenges faced by graduate students:
+•	Affordability: Saves students $25-$50 per week by integrating real-time grocery pricing.
+•	Time Efficiency: Reduces meal planning to under 5 minutes per week.
+•	Health & Nutrition: Ensures at least 80% of meals meet USDA dietary guidelines.
+For Students:
+•	A smarter, automated way to plan meals within their budget.
+•	Access to real-time grocery prices, eliminating overspending.
+•	Personalized nutrition tracking, ensuring balanced meals.
+•	A freemium model, allowing easy adoption with optional premium features.
+For the Market:
+•	Unique Differentiation: No existing competitor combines meal planning with grocery price tracking.
+•	Scalability: The segmented pricing model allows MealWise to serve both budget-conscious students and health-focused users.
+•	Competitive Advantage: Competitors like Mealime and PlateJoy focus solely on meal planning, missing the opportunity to optimize grocery expenses.
+
+Market Opportunity
+The Total Addressable Market (TAM) for MealWise includes the 3.3 million graduate students in the U.S.
+•	Monetary TAM: $158 million annually (assuming a $7.99/month subscription for 50% of students).
+•	Premium Adoption Potential: If 30% of users upgrade to the premium plan ($12.99/month), TAM increases to $180 million annually.
+MealWise capitalizes on the shift toward digital-first meal planning and budget optimization, ensuring a strong value proposition in the growing student finance and health-conscious markets.
+
+Justification & Competitive Edge
+Why will students choose MealWise?
+•	Immediate Cost Savings: Users save 4x-10x the monthly subscription fee through optimized grocery shopping.
+•	Personalized Experience: AI adapts meal plans based on evolving preferences and budget constraints.
+•	Ease of Adoption: A freemium model ensures risk-free adoption, with premium features available for those seeking advanced insights.
+
+Unlike competitors, MealWise is built on the understanding that students need more than just a meal plan—they need a cost-efficient strategy to manage their nutrition.
+
+
+
+
+Conclusion
+MealWise is more than just a meal-planning app—it is a smart, budget-conscious food optimization tool for graduate students. By integrating grocery price tracking with AI-driven meal planning, it fills a critical gap in the market, providing users with tangible financial savings, health benefits, and time efficiency.
+With a scalable pricing model, strong competitive differentiation, and a large addressable market, MealWise is well-positioned to disrupt the meal-planning industry and become an essential tool for students managing their food budgets effectively.
+
+
+MealWise ensures that students eat smarter, save more, and plan better - every single day!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Customer Problem Space
+
+1. Fertile Land
+Meal Planning
+
+2. Customer
+Graduate Student
+
+3. Job To Be Done
+Plan meals
+
+4. Outcomes
+1.	Outcome 1: Meals are affordable
+Actual Outcome Statement: The average weekly food expense for graduate students is $75-$100.
+Desired Outcome Statement: The average weekly food expense for graduate students is less than $50.
+Metric: Average weekly food expenses (in USD).
+Measurement Method: Track and sum total weekly grocery and dining expenses through receipts, bank statements, or a budgeting app.
+
+2.	Outcome 2: Maintain a balanced diet
+Actual Outcome Statement: 40% of graduate student meals meet basic nutritional requirements.
+Desired Outcome Statement: At least 80% of graduate student meals meet basic nutritional requirements.
+Metric: Percentage of meals meeting basic nutritional requirements (e.g., USDA guidelines)
+Measurement Method: Use nutritional analysis tools or apps to assess recipes and meals against USDA dietary guidelines, tracking over a week.
+
+3.	Outcome 3: Meals are prepared in a short period of time
+Actual Outcome Statement: The average preparation time per meal is 45 minutes.
+Desired Outcome Statement: The average preparation time per meal is 20 minutes or less.
+Metric: Average preparation time per meal (in minutes).
+Measurement Method: Track and record preparation times for meals using a timer or self-reports over one week.
+
+
+5. Problem
+
+a.	Gap
+On average, the actual graduate students' weekly food expenses is $25–$50 higher than the desired budget of $50.
+
+
+b.	Causes
+a.	Lack of Meal Planning Skills: Inability to plan efficient, cost-effective meals leads to overspending and food waste.
+b.	Reliance on Eating Out: Limited cooking skills or time constraints push students to eat out or rely on pre-packaged meals, which are significantly more expensive than cooking at home.
+c.	Unawareness of Cost-Effective Options: Students lack knowledge about affordable grocery stores, discounts, or meal-prep techniques, resulting in higher-than-necessary expenses.
+
+6. Customer Journey Map
+Uploaded as a separate file
+
+7. Use Cases
+a.	Breakfast
+b.	Lunch
+c.	Dinner
+
+8. Problem Sizing
+Per Instance Problem Size
+If a student meal-plans once per week, the overspending per instance is $25–$50 per week.
+Graduate students meal-plan every week, so the total annual overspending is: 
+$25–$50 per week × 52 weeks = $1,300 – $2,600 per year.
+
+Number of Graduate Students in the U.S.: ~3.3 million (based on National Center for Education Statistics data).
+
+Assuming 50% of graduate students struggle with meal budgeting, the affected population is: ~1.65 million students.
+
+Per student:
+•	$1,300 – $2,600 in overspending annually.
+Total for affected students (~1.65M students in the U.S.):
+•	$2.1B – $4.3B in overspending per year.
+
+9. Problem Category
+Meal Planning Efficiency problem
+
+10. Problem Statement
+Graduate students experience an average of $25–$50 more in weekly food expenses than their desired budget, because inefficient meal planning and lack of cost-effective grocery strategies lead to overspending and food waste. This results in an annual financial burden of $1,300–$2,600 per student, with a cumulative impact of over $4 billion annually across affected students in the U.S. Addressing this problem will reduce weekly food expenses to align with the desired budget and ensure affordable, balanced nutrition.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Market Space
+
+1. Overall Market
+
+Market Name: U.S. Graduate Student Meal Planning Market
+Estimated Number of Actors: Approximately 3.3 million graduate students in the U.S. (National Center for Education Statistics).
+Trends:
+•	Graduate student enrollment has shown steady growth, with an increase in students pursuing higher education due to career advancement opportunities.
+•	Rising inflation and increased food costs are pressuring students to adopt more budget-friendly meal planning solutions.
+•	Digital tools and meal-prep services are becoming increasingly popular, providing convenience in meal planning.
+•	Increased awareness of nutritional health and a shift toward balanced meal preparation.
+
+2. Total Addressable Market (TAM)
+•	Estimated Number of Graduate Students in the U.S.: 3.3 million (National Center for Education Statistics)
+•	Assumption: 50% (1.65M students) struggle with meal budgeting.
+•	TAM Calculation:
+o	Monetary TAM:
+	If 1.65M students subscribe to MealWise Standard Plan ($7.99/month):
+	1.65M * $7.99 * 12 = $158 million annually
+o	Units Sold TAM:
+	1.65M subscriptions per year
+o	Premium Adoption Scenario: If 30% upgrade to Premium ($12.99/month):
+	(1.16M * $7.99 * 12) + (495K * $12.99 * 12) = $180M annually
+
+3. Market Segmentation
+
+Segmentation Variable	Values
+Budget Sensitivity	High Budget-Conscious, Moderate Budget-Conscious, Low Budget-Conscious
+Meal Planning Experience	Beginner, Intermediate, Advanced
+Time Availability	Less than 15 min/day, 15-30 min/day, More than 30 min/day
+Dietary Preferences	No Restrictions, Vegetarian, Vegan, High-Protein, Gluten-Free
+Cooking Skill Level	Novice, Competent, Skilled
+Lifestyle Focus	Health-Oriented, Budget-Oriented, Convenience-Oriented
+
+Segment 1: Budget-Conscious Beginners
+•	Segmentation Variables & Values:
+o	Budget Sensitivity: High Budget-Conscious
+o	Meal Planning Experience: Beginner
+o	Time Availability: 15-30 min/day
+•	Estimated Number of Actors: ~1.2 million students (NCES).
+•	Growth Rate: Steady growth due to rising food costs (BLS).
+•	Reasoning: These students struggle the most with meal planning due to financial constraints and lack of prior experience.
+Segment 2: Time-Constrained Health Enthusiasts
+•	Segmentation Variables & Values:
+o	Budget Sensitivity: Moderate Budget-Conscious
+o	Meal Planning Experience: Intermediate
+o	Time Availability: Less than 15 min/day
+o	Dietary Preferences: High-Protein or Gluten-Free
+•	Estimated Number of Actors: ~900,000 students (Statista).
+•	Growth Rate: Fast-growing due to increasing awareness of health-conscious eating and limited time availability (USDA Dietary Guidelines).
+•	Reasoning: Many students want to eat healthier but lack the time to prepare nutritious meals.
+Segment 3: Balanced Meal Planners
+•	Segmentation Variables & Values:
+o	Budget Sensitivity: Moderate Budget-Conscious
+o	Meal Planning Experience: Intermediate
+o	Time Availability: 15-30 min/day
+o	Cooking Skill Level: Intermediate
+•	Estimated Number of Actors: ~700,000 students (NCES).
+•	Growth Rate: Growing steadily as more students seek a balance between cost, health, and time
+•	Reasoning: These students need a solution that balances cost-effectiveness, nutritional value, and preparation time.
+
+
+4. Target Market Profiles
+Target Market: Budget-Conscious Graduate Students
+•	Market Size:
+o	~3.3 million graduate students in the U.S. (NCES)
+o	Approximately 50% (~1.65 million) struggle with meal budgeting.
+•	Market Trends:
+o	Rising tuition costs and inflation increase financial stress on students.
+o	Growing awareness of health-conscious eating among young adults.
+o	Increased reliance on digital solutions for meal planning and budgeting.
+•	Justification:
+o	Large market size with a clear financial pain point.
+o	Existing solutions overlook affordability and efficiency, providing a market gap.
+o	Digital adoption trends support the shift toward app-based budgeting tools.
+
+5. Competition
+
+Direct Competitors (Products)
+1.	Mealime | Mealime Inc.
+Focuses on quick and healthy meal planning with grocery list integration (Mealime).
+2.	PlateJoy | PlateJoy Inc.
+Subscription-based, customized meal planning with nutritional focus (PlateJoy).
+Indirect Competitors (Product Categories)
+1.	Grocery Budgeting Apps (e.g., EveryDollar (EveryDollar), Goodbudget (Goodbudget))
+2.	Pre-Packaged Meal Delivery Services (e.g., HelloFresh (HelloFresh), Blue Apron (Blue Apron))
+3.	Manual Method: Google Sheets-based meal tracking and cost estimation.
+
+
+6. Positioning Analysis
+
+a.	Current State Positioning Map
+Evaluation Criteria for Meal Planning Options:
+1.	Affordability – Cost per meal and total weekly food budget.
+2.	Time Efficiency – Average time taken to plan and prepare meals.
+3.	Nutritional Balance – Percentage of meals meeting USDA dietary guidelines (USDA).
+
+Current State Positioning Map (Without Product Idea):
+•	Mealime: High affordability, medium time efficiency, high nutritional balance.
+PlateJoy: Low affordability, high time efficiency, high nutritional balance.
+•	Manual Method (Google Sheets): High affordability, low time efficiency, variable nutritional balance.
+•	Pre-Packaged Meals (HelloFresh, Blue Apron): Low affordability, high time efficiency, high nutritional balance.
+
+White Space Opportunities:
+•	A more affordable meal planning solution with strong nutritional guidance.
+•	A faster, automated meal planning experience that integrates budgeting and grocery tracking.
+•	A tool combining meal planning with real-time grocery pricing data.
+
+Evaluation Criteria	Mealime	PlateJoy	Manual Method (Google Sheets)	Hello Fresh	Blue Apron
+Affordability	5	5	7	1	2
+Time Efficiency	8	6	8	2	3
+Nutritional Balance	9	5	7	4	4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+b.	Future State Positioning Map
+
+New Criteria Added - 
+Grocery Cost Tracking - Added to address customers' increasing desire for real-time spending insights, offering a distinct competitive advantage.
+
+Grocery cost tracking refers to the ability of a product to help users monitor, manage, and optimize their grocery expenses. This feature often includes real-time price updates, cost comparisons across stores, budgeting tools, and spending insights.
+Scoring Criteria (1 to 10):
+•	1-3: Manual tracking with no automation; users must input costs themselves (e.g., Google Sheets, meal kit services like Hello Fresh).
+•	4-6: Partial automation with limited cost insights; some manual input required.
+•	7-9: Advanced features like dynamic price tracking, budgeting tools, and cost optimization.
+•	10: Fully automated real-time cost tracking with store integrations and predictive insights (e.g., MealWise Planner).
+
+Evaluation Criteria	Mealime	PlateJoy	Manual Method 
+(Google Sheets)	Hello Fresh	Blue Apron	MealWise
+(New Product)
+Affordability	5	5	7	1	2	6
+Time Efficiency	8	6	8	2	3	9
+Nutritional Balance	9	5	7	4	4	8
+Grocery Cost Tracking	3	3	3	3	3	
+10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c.	Position-to-Own
+
+"Affordable, healthy meals planned in minutes."
+
+7. Market Focus Decision
+
+Target Market: Budget-Conscious Graduate Students
+Justification:
+•	Large Market Size: ~1.2 million potential users (NCES).
+•	Growing Trend: Rising food costs increase demand for budgeting tools.
+•	Unmet Need: Current solutions overlook affordability and efficiency.
+
+
+
+ 
+3. Solution Space
+
+1. Product Focus Decision
+Product Idea Description:
+•	Name: MealWise
+•	Purpose: Simplify meal planning for budget-conscious graduate students.
+•	Product Category: Digital Meal Planning Applications
+•	Main Attributes:
+o	Automated meal planning
+o	Real-time grocery price integration
+o	Nutritional analysis based on USDA guidelines
+o	Customizable meal plans with dietary preferences
+•	Properties: Cloud-based web and mobile app
+•	Key Technology: Machine learning algorithms for meal planning and grocery cost prediction
+•	Operating Requirements: Internet connection, compatible with iOS and Android
+•	How It Works: Users input dietary preferences and budget, and the app generates cost-effective, nutritionally balanced meal plans.
+
+2. User Views
+
+Happy Path Workflow 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Attached Wire Frames as a separate file.
+
+3. Functional Requirements
+•	FR1: As a student, I want to input my dietary preferences so that I get customized meal plans.
+•	FR2: As a student, I need a grocery price tracker so that I can monitor my expenses in real-time.
+•	FR3: When I plan a meal, I want to see preparation times so that I can schedule cooking sessions efficiently.
+•	FR4: As a student, I want to export my meal plans so that I can share them with my roommates.
+
+4.	Context View
+
+ 
+
+
+5. Non-Functional Requirements
+
+Interoperability:
+•	MealWise shall support API integration with grocery store price databases to retrieve real-time grocery costs, ensuring accurate budget tracking for users.
+•	MealWise shall enable integration with Google Calendar to allow users to schedule meal preparation times efficiently.
+Compatibility:
+•	The web version of MealWise shall support Chrome, Firefox, and Safari, ensuring usability across major web browsers.
+•	MealWise shall be compatible with the latest three major versions (Android 13, 14, 15 and iOS 16, 17, 18) to ensure seamless mobile accessibility.
+Responsiveness:
+•	The app shall load meal plans and grocery price updates within 0.5 seconds to provide a smooth user experience.
+•	The grocery price tracker shall update cost data within 2 seconds after the user inputs an item to minimize wait time.
+Usability:
+•	First-time users shall be able to generate a meal plan within 5 minutes without external guidance.
+•	The app shall provide autocomplete suggestions for grocery items based on past user selections to minimize cognitive load.
+Availability:
+•	MealWise shall maintain an uptime of 99.99% to ensure continuous access for meal planning and budgeting.
+•	Scheduled maintenance downtime shall not exceed 15 minutes per quarter.
+Accuracy:
+•	The grocery cost tracker shall provide price estimates with an accuracy of ±2% based on real-time store data.
+•	The nutritional analysis shall correctly classify meal plans according to USDA dietary guidelines with a 95% accuracy rate.
+
+Security:
+•	The app shall enforce multi-factor authentication (MFA) for user logins to prevent unauthorized access.
+•	All user data, including dietary preferences and financial details, shall be encrypted using AES-256 encryption both in transit and at rest.
+Privacy:
+•	MealWise shall comply with GDPR and CCPA regulations by allowing users to delete their personal data permanently upon request.
+•	Location data for grocery cost tracking shall be anonymized before being processed or shared.
+Safety:
+•	The app shall ensure that meal recommendations consider food allergies to prevent potential health risks.
+•	MealWise shall not suggest expired or recalled grocery items in meal planning to ensure user safety.
+
+
+
+ 
+4. Customer Value Space
+
+1.  Product Features and Benefits
+
+Product Feature	Benefit
+Automated Meal Planning	Reduces meal planning time to under 5 minutes per week
+Real-time Grocery Price Integration	Helps users track and optimize grocery expenses with up-to-date cost data
+Nutritional Analysis	Ensures users meet USDA dietary guidelines for balanced nutrition
+Customizable Meal Plans	Accommodates dietary preferences, allergies, and time constraints
+Cloud-based Storage	Enables users to save and access meal plans and shopping lists from any device
+Grocery List Export	Allows seamless sharing of meal plans with roommates or family
+Integration with Google Calendar	Helps users schedule meal prep efficiently
+Secure Multi-Factor Authentication	Protects user accounts from unauthorized access
+
+
+2. Customer Value Proposition Strategy
+For MealWise, the chosen value proposition strategy is ‘More for the Same’. The product provides more benefits in terms of affordability, time efficiency, and real-time grocery cost tracking while maintaining the same price level as existing meal-planning apps.
+•	Justification:
+o	Competitors like Mealime and PlateJoy offer meal planning, but they do not integrate real-time grocery pricing, making cost estimation a challenge.
+o	By providing both meal planning and cost optimization, MealWise delivers a higher value proposition than competitors at a similar price point.
+o	Graduate students, the primary target market, prioritize affordability. Keeping the price competitive ensures accessibility while offering enhanced features.
+•	Pricing Support:
+o	The subscription price is aligned with current market rates for meal-planning apps, ensuring adoption without deterring budget-conscious students.
+o	MealWise's cost-saving benefits reinforce the value proposition, making it easy for customers to justify the expense.
+
+
+
+
+3. Pricing Model
+1) Price Setting Strategy: Segmented Pricing Strategy
+•	Three-tier pricing:
+o	Basic Plan (Free): Limited features with ads, meal planning without grocery tracking.
+o	Standard Plan ($7.99/month): Full meal planning features, real-time grocery price tracking.
+o	Premium Plan ($12.99/month): Additional AI-driven meal recommendations and personalized nutrition guidance.
+2) Pricing Metrics:
+•	Per User per Month: Ensures steady revenue while aligning with industry standards.
+•	Freemium Model: Encourages adoption while converting users to paid plans over time.
+3) Payment Structure:
+•	Monthly and annual subscription options.
+•	Discounted annual plan to encourage long-term commitment.
+4) Price:
+•	Standard Plan: $7.99/month ($79.99 annually)
+•	Premium Plan: $12.99/month ($129.99 annually)
+•	Reference Pricing: Similar apps like PlateJoy charge $12.99/month, making MealWise’s pricing competitive.
+
+
+4. Customer Cost Items
+Customers incur the following costs:
+•	Monetary Costs:
+o	Subscription fee ($7.99 - $12.99/month)
+o	Internet data costs
+o	Optional premium features (eg - AI-driven meal plans)
+•	Time & Effort Costs:
+o	Initial setup and learning (~20 minutes)
+o	Entering dietary preferences and tracking expenses (~5 minutes weekly)
+•	Social & Emotional Costs:
+o	Adapting to a new meal-planning approach
+o	Trusting AI-driven meal recommendations
+
+5. Customer Value Proposition Evaluation
+MealWise offers a highly compelling value proposition for graduate students due to the following factors:
+•	Impact: Customers save an average of $25-$50 per week, making the product’s ROI significant.
+•	Preference: No existing competitor combines meal planning with grocery cost tracking.
+•	Risk: Low-risk adoption with a freemium model and cancel-anytime subscription.
+•	Alignment: Aligns with students’ budget-conscious lifestyles and health goals.
+The benefits significantly outweigh the costs, making it easy for users to justify the purchase.
+
+Appendix
+
+Number of Graduate Students -
+https://nces.ed.gov/programs/coe/indicator/ctb/graduate-degree-fields
+
+Cost of Living, Graduate Students -
+https://grad.ncsu.edu/students/international-students/cost-of-living-in-the-u-s/
+
+Dietery Guidelines -
+https://www.dietaryguidelines.gov/
+
+Statista – Graduate student Spending Patterns 
+https://www.statista.com/statistics/1075245/education-expenditure-per-student-us-colleges-public-doctoral/
+
+Mealime –
+https://www.mealime.com/
+
+Platejoy –
+https://www.platejoy.com/
+
+EveryDollar –
+https://www.ramseysolutions.com/ramseyplus/everydollar
+
+GoodBudget -
+https://goodbudget.com/
+
+HelloFresh -
+https://www.hellofresh.com/
+
+BlueApron -
+https://www.blueapron.com/
+
+
+
+
+
+
+

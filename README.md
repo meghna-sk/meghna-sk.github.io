@@ -47,7 +47,7 @@ A modern, responsive portfolio website showcasing front-end development skills w
 - Responsive design principles
 - Dark mode implementation
 - Custom scrollbar styling
-
+Meghna Suraj Kashyap Product Workbook.docx
 ### JavaScript
 - DOM manipulation and event handling
 - Intersection Observer API for scroll animations
