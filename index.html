@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Meghna's Portfolio</title>
   <meta name="description" content="Front-end Developer & AI Product Builder — Showcasing cutting-edge web development skills" />
   
   <!-- Social Media Preview (Open Graph) -->
   <meta property="og:title" content="Meghna's Portfolio" />
-  <meta property="og:description" content="Product Manager, Full-Stack Developer and AI Enthusiast. Building AI-powered products that solve real-world problems." />
+  <meta property="og:description" content="Aspiring Product Manager, Full-Stack Developer and AI Enthusiast. Building AI-powered products that solve real-world problems." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://meghna-sk.github.io" />
   <meta property="og:image" content="https://meghna-sk.github.io/profilePic.jpeg" />
@@ -17,7 +17,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Meghna's Portfolio" />
-  <meta name="twitter:description" content="Product Manager, Full-Stack Developer and AI Enthusiast. Building AI-powered products that solve real-world problems." />
+  <meta name="twitter:description" content="Aspiring Product Manager, Full-Stack Developer and AI Enthusiast. Building AI-powered products that solve real-world problems." />
   <meta name="twitter:image" content="https://meghna-sk.github.io/profilePic.jpeg" />
   
   <!-- Prevent dark-mode flash -->
@@ -132,6 +132,107 @@
     
     /* Education-specific glow effects */
     .timeline-btn[data-item="cmu"].active {
+    
+    /* Responsive improvements */
+    @media (max-width: 640px) {
+      .timeline-item {
+        margin-bottom: 2rem;
+      }
+      
+      .timeline-item .bg-white {
+        padding: 1rem;
+      }
+      
+      .timeline-item img {
+        height: 3rem;
+        width: 3rem;
+      }
+      
+      .card {
+        padding: 1rem;
+      }
+      
+      .tilt {
+        transform: none !important;
+      }
+      
+      /* Mobile-specific spacing */
+      .space-y-8 > * + * {
+        margin-top: 1.5rem;
+      }
+      
+      .space-y-12 > * + * {
+        margin-top: 2rem;
+      }
+      
+      .space-y-16 > * + * {
+        margin-top: 2.5rem;
+      }
+    }
+    
+    /* Better touch targets for mobile */
+    @media (max-width: 768px) {
+      button, a {
+        min-height: 44px;
+        min-width: 44px;
+      }
+      
+      .mobile-menu-open {
+        overflow: hidden;
+      }
+      
+      /* Tablet-specific improvements */
+      .grid {
+        gap: 1rem;
+      }
+      
+      .p-8 {
+        padding: 1.5rem;
+      }
+      
+      .text-xl {
+        font-size: 1.125rem;
+      }
+    }
+    
+    /* Large screen optimizations */
+    @media (min-width: 1024px) {
+      .max-w-6xl {
+        max-width: 72rem;
+      }
+      
+      .gap-12 {
+        gap: 3rem;
+      }
+    }
+    
+    /* Smooth scrolling for mobile */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Prevent horizontal scroll on mobile */
+    body {
+      overflow-x: hidden;
+    }
+    
+    /* Better mobile navigation */
+    @media (max-width: 768px) {
+      #mobileMenu {
+        animation: slideDown 0.3s ease-out;
+      }
+      
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
       box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
       border-color: #10b981;
     }
@@ -288,9 +389,9 @@
 
   <!-- NAV -->
   <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-black/5 dark:border-white/5 transition-colors duration-300">
-    <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    <nav class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
       <a href="#intro" class="font-extrabold tracking-tight text-xl glow">MSK<span class="text-violet-500">.</span></a>
-      <div class="hidden md:flex gap-7 text-sm text-slate-700 dark:text-slate-300">
+      <div class="hidden md:flex gap-4 lg:gap-7 text-sm text-slate-700 dark:text-slate-300">
         <a data-nav="intro" href="#intro" class="hover:text-slate-900 dark:hover:text-white transition-colors">Intro</a>
         <a data-nav="timeline" href="#timeline" class="hover:text-slate-900 dark:hover:text-white transition-colors">Work Ex & Education</a>
         <a data-nav="skills" href="#skills" class="hover:text-slate-900 dark:hover:text-white transition-colors">Skills</a>
@@ -313,46 +414,65 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </div>
+        
+        <!-- Mobile menu button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
+    </nav>
+    
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#intro" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Intro</a>
+        <a href="#timeline" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Work Ex & Education</a>
+        <a href="#skills" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Skills</a>
+        <a href="#projects" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Projects</a>
+        <a href="#contact" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">Contact</a>
+      </div>
+    </div>
     </nav>
   </header>
 
   <!-- INTRO -->
   <section id="intro" class="relative reveal">
-    <div class="mx-auto max-w-6xl px-4 pt-14 pb-12 md:pt-24 md:pb-16">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 pb-8 sm:pb-12 md:pt-20 md:pb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         <!-- Left: greeting + name + contact -->
-        <div class="space-y-6">
-          <div class="space-y-2">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        <div class="space-y-4 sm:space-y-6 text-center md:text-left">
+          <div class="space-y-2 sm:space-y-3">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
               Hello 👋
             </h1>
-            <h2 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-violet-600 dark:text-violet-400">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-violet-600 dark:text-violet-400">
               I'm Meghna
             </h2>
-            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium">
-              Product Manager, Full-Stack Developer and AI Enthusiast
+            <p class="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium">
+              Aspiring Product Manager, Full-Stack Developer and AI Enthusiast
             </p>
           </div>
           
-          <p class="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+          <p class="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300 leading-relaxed max-w-lg mx-auto md:mx-0">
             Passionate about building AI-powered products that solve real-world problems. Turning complex ideas into elegant, user-friendly solutions that make a difference.
           </p>
           
-          <div class="flex items-center gap-6">
-            <a href="mailto:meghnakashyap@cmu.edu" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-violet-600 text-white rounded-lg font-semibold hover:from-violet-600 hover:to-violet-700 transition-all duration-200 transform hover:scale-105 shadow-lg">
+          <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <a href="mailto:meghnakashyap@cmu.edu" class="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-violet-500 to-violet-600 text-white rounded-lg font-semibold hover:from-violet-600 hover:to-violet-700 transition-all duration-200 transform hover:scale-105 shadow-lg text-sm sm:text-base">
               <i class="fas fa-envelope"></i>
               Get in Touch
             </a>
             
             <div class="flex gap-4">
-              <a href="https://github.com/meghna-sk" class="text-2xl text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors" target="_blank" aria-label="GitHub">
+              <a href="https://github.com/meghna-sk" class="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors" target="_blank" aria-label="GitHub">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://www.linkedin.com/in/meghna-kashyap/" class="text-2xl text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors" target="_blank" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/meghna-kashyap/" class="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors" target="_blank" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
               </a>
-              <a href="MeghnaSurajKashyap_APM_Resume.pdf" class="text-2xl text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors" target="_blank" aria-label="Resume">
+              <a href="MeghnaSurajKashyap_APM_Resume.pdf" class="text-xl sm:text-2xl text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors" target="_blank" aria-label="Resume">
                 <i class="fas fa-file-alt"></i>
               </a>
             </div>
@@ -360,18 +480,18 @@
         </div>
         
         <!-- Right: Profile Picture -->
-        <div class="flex justify-center">
+        <div class="flex justify-center order-first md:order-last">
           <div class="relative group">
             <!-- Background glow effect -->
             <div class="absolute inset-0 bg-gradient-to-r from-violet-500/30 to-fuchsia-500/30 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-300"></div>
             
             <!-- Main image container -->
-            <div class="relative rounded-full p-3 ring-4 ring-violet-500/30 shadow-2xl bg-white/10 dark:bg-slate-900/20 backdrop-blur group-hover:ring-violet-500/50 transition-all duration-300">
-              <img src="profilePic.jpeg" alt="Meghna Suraj Kashyap" class="h-44 w-44 md:h-56 md:w-56 rounded-full object-cover shadow-lg" />
+            <div class="relative rounded-full p-2 sm:p-3 ring-4 ring-violet-500/30 shadow-2xl bg-white/10 dark:bg-slate-900/20 backdrop-blur group-hover:ring-violet-500/50 transition-all duration-300">
+              <img src="profilePic.jpeg" alt="Meghna Suraj Kashyap" class="h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 lg:h-56 lg:w-56 rounded-full object-cover shadow-lg" />
             </div>
             
             <!-- Decorative badge -->
-            <div class="absolute -bottom-3 -right-3 w-10 h-10 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg border-2 border-white dark:border-slate-800">
+            <div class="absolute -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold shadow-lg border-2 border-white dark:border-slate-800">
               <i class="fas fa-code"></i>
             </div>
             
@@ -384,94 +504,94 @@
   </section>
 
   <!-- TIMELINE -->
-  <section id="timeline" class="mx-auto max-w-6xl px-4 py-12 reveal">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center">Experience & Education</h2>
+  <section id="timeline" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 reveal">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 sm:mb-12 text-center">Experience & Education</h2>
     
 
     
     <!-- Timeline Container -->
     <div class="relative">
       <!-- Timeline Line -->
-      <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-violet-500 via-sky-500 to-emerald-500"></div>
+      <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-violet-500 via-sky-500 to-emerald-500 hidden md:block"></div>
       
       <!-- Timeline Items -->
-      <div class="space-y-16">
+      <div class="space-y-8 sm:space-y-12 md:space-y-16">
         <!-- CMU - Education (Aug 2024 - Dec 2025) -->
         <div class="timeline-item group" data-item="cmu">
-          <div class="flex items-center justify-between">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between">
             <!-- Left Content -->
-            <div class="w-5/12 pr-8">
-              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
-                <div class="flex items-center gap-4 mb-6">
-                  <img src="cmu.png" alt="CMU" class="h-16 w-16 object-contain">
-                  <div>
-                    <h3 class="text-xl font-bold text-sky-600 dark:text-sky-400">Master of Information Systems Management</h3>
-                    <p class="text-lg text-slate-600 dark:text-slate-400">Carnegie Mellon University</p>
-                    <p class="text-base text-slate-500">August 2024 – December 2025</p>
-                    <p class="text-base text-slate-500 font-semibold">GPA: 3.88/4.0</p>
-                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200">Education</span>
+            <div class="w-full md:w-5/12 md:pr-8 mb-4 md:mb-0">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <img src="cmu.png" alt="CMU" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto sm:mx-0">
+                  <div class="text-center sm:text-left">
+                    <h3 class="text-lg sm:text-xl font-bold text-sky-600 dark:text-sky-400">Master of Information Systems Management</h3>
+                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400">Carnegie Mellon University</p>
+                    <p class="text-sm sm:text-base text-slate-500">August 2024 – December 2025</p>
+                    <p class="text-sm sm:text-base text-slate-500 font-semibold">GPA: 3.88/4.0</p>
+                    <span class="inline-block px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200">Education</span>
                   </div>
                 </div>
                 
-                <div class="space-y-3">
-                  <div class="flex items-start gap-3">
+                <div class="space-y-2 sm:space-y-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Deans List - Fall Semester 2024, Spring Semester 2025</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Deans List - Fall Semester 2024, Spring Semester 2025</p>
                   </div>
-                  <div class="flex items-start gap-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Coursework: Product Management, Market Strategy, A/B Testing, Agentic Technology, Economic Analysis, Statistics</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Coursework: Product Management, Market Strategy, A/B Testing, Agentic Technology, Economic Analysis, Statistics</p>
                   </div>
                 </div>
               </div>
             </div>
             
             <!-- Timeline Node -->
-            <div class="w-2/12 flex justify-center">
-              <div class="w-8 h-8 bg-sky-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            <div class="w-full md:w-2/12 flex justify-center mb-4 md:mb-0">
+              <div class="w-6 h-6 sm:w-8 sm:h-8 bg-sky-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
             </div>
             
             <!-- Right Content (Empty for balance) -->
-            <div class="w-5/12 pl-8"></div>
+            <div class="w-full md:w-5/12 md:pl-8"></div>
           </div>
         </div>
         
         <!-- Intuit - Work Experience (May-Aug 2025) -->
         <div class="timeline-item group" data-item="intuit">
-          <div class="flex items-center justify-between">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between">
             <!-- Left Content (Empty for balance) -->
-            <div class="w-5/12 pr-8"></div>
+            <div class="w-full md:w-5/12 md:pr-8 mb-4 md:mb-0"></div>
             
             <!-- Timeline Node -->
-            <div class="w-2/12 flex justify-center">
-              <div class="w-8 h-8 bg-violet-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            <div class="w-full md:w-2/12 flex justify-center mb-4 md:mb-0">
+              <div class="w-6 h-6 sm:w-8 sm:h-8 bg-violet-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
             </div>
             
             <!-- Right Content -->
-            <div class="w-5/12 pl-8">
-              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
-                <div class="flex items-center gap-4 mb-6">
-                  <img src="intuit.png" alt="Intuit" class="h-16 w-16 object-contain">
-                  <div>
-                    <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400">Technical Product Manager Intern</h3>
-                    <p class="text-lg text-slate-600 dark:text-slate-400">Intuit</p>
-                    <p class="text-base text-slate-500">May - Aug 2025</p>
-                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
+            <div class="w-full md:w-5/12 md:pl-8">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <img src="intuit.png" alt="Intuit" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto sm:mx-0">
+                  <div class="text-center sm:text-left">
+                    <h3 class="text-lg sm:text-xl font-bold text-violet-600 dark:text-violet-400">Technical Product Manager Intern</h3>
+                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400">Intuit</p>
+                    <p class="text-sm sm:text-base text-slate-500">May - Aug 2025</p>
+                    <span class="inline-block px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
                   </div>
                 </div>
                 
-                <div class="space-y-3">
-                  <div class="flex items-start gap-3">
+                <div class="space-y-2 sm:space-y-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Conducted user research with 25 TPMs to understand gaps in documentation and workflow tools, prioritizing opportunities to improve knowledge management and reduce friction for web-based internal tools.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Conducted user research with 25 TPMs to understand gaps in documentation and workflow tools, prioritizing opportunities to improve knowledge management and reduce friction for web-based internal tools.</p>
                   </div>
-                  <div class="flex items-start gap-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Designed and launched AI-powered tools to streamline TPM workflows, boosting knowledge sharing by 50% and reducing manual work by 30%. Solution was adopted across Intuit to support scalable, self-serve program enablement.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Designed and launched AI-powered tools to streamline TPM workflows, boosting knowledge sharing by 50% and reducing manual work by 30%. Solution was adopted across Intuit to support scalable, self-serve program enablement.</p>
                   </div>
-                  <div class="flex items-start gap-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Standardized and launched a centralized knowledge repository with guides, playbooks, and onboarding, improving discoverability, version control, and cross-team adoption for fiscal year 2026 programs.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Standardized and launched a centralized knowledge repository with guides, playbooks, and onboarding, improving discoverability, version control, and cross-team adoption for fiscal year 2026 programs.</p>
                   </div>
                 </div>
               </div>
@@ -481,87 +601,87 @@
         
         <!-- Philips - Work Experience (Jan-Apr 2025) -->
         <div class="timeline-item group" data-item="philips">
-          <div class="flex items-center justify-between">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between">
             <!-- Left Content -->
-            <div class="w-5/12 pr-8">
-              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
-                <div class="flex items-center gap-4 mb-6">
-                  <img src="philips.png" alt="Philips" class="h-16 w-16 object-contain">
-                  <div>
-                    <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400">Project Manager</h3>
-                    <p class="text-lg text-slate-600 dark:text-slate-400">Philips (CSL)</p>
-                    <p class="text-base text-slate-500">Jan - Apr 2025</p>
-                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
+            <div class="w-full md:w-5/12 md:pr-8 mb-4 md:mb-0">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <img src="philips.png" alt="Philips" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto sm:mx-0">
+                  <div class="text-center sm:text-left">
+                    <h3 class="text-lg sm:text-xl font-bold text-violet-600 dark:text-violet-400">Project Manager</h3>
+                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400">Philips (CSL)</p>
+                    <p class="text-sm sm:text-base text-slate-500">Jan - Apr 2025</p>
+                    <span class="inline-block px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
                   </div>
                 </div>
                 
-                <div class="space-y-3">
-                  <div class="flex items-start gap-3">
+                <div class="space-y-2 sm:space-y-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Conducted internal user research with Philips employees and analyzed platform metrics to identify backlog management gaps and uncover GenAI opportunities across 10+ product teams.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Conducted internal user research with Philips employees and analyzed platform metrics to identify backlog management gaps and uncover GenAI opportunities across 10+ product teams.</p>
                   </div>
-                  <div class="flex items-start gap-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Defined product vision and strategy, created wireframes, and collaborated with designers and engineers to develop a prototype AI backlog tool with intelligent categorization and semantic search.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Defined product vision and strategy, created wireframes, and collaborated with designers and engineers to develop a prototype AI backlog tool with intelligent categorization and semantic search.</p>
                   </div>
-                  <div class="flex items-start gap-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Delivered stakeholder presentations and market analysis to Philips leadership, aligning on product strategy and showcasing a solution projected to reduce backlog search time by 40%.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Delivered stakeholder presentations and market analysis to Philips leadership, aligning on product strategy and showcasing a solution projected to reduce backlog search time by 40%.</p>
                   </div>
                 </div>
               </div>
             </div>
             
             <!-- Timeline Node -->
-            <div class="w-2/12 flex justify-center">
-              <div class="w-8 h-8 bg-violet-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            <div class="w-full md:w-2/12 flex justify-center mb-4 md:mb-0">
+              <div class="w-6 h-6 sm:w-8 sm:h-8 bg-violet-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
             </div>
             
             <!-- Right Content (Empty for balance) -->
-            <div class="w-5/12 pl-8"></div>
+            <div class="w-full md:w-5/12 md:pl-8"></div>
           </div>
         </div>
         
         <!-- Wells Fargo - Work Experience (2022-2024) -->
         <div class="timeline-item group" data-item="wellsfargo">
-          <div class="flex items-center justify-between">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between">
             <!-- Left Content (Empty for balance) -->
-            <div class="w-5/12 pr-8"></div>
+            <div class="w-full md:w-5/12 md:pr-8 mb-4 md:mb-0"></div>
             
             <!-- Timeline Node -->
-            <div class="w-2/12 flex justify-center">
-              <div class="w-8 h-8 bg-violet-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            <div class="w-full md:w-2/12 flex justify-center mb-4 md:mb-0">
+              <div class="w-6 h-6 sm:w-8 sm:h-8 bg-violet-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
             </div>
             
             <!-- Right Content -->
-            <div class="w-5/12 pl-8">
-              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
-                <div class="flex items-center gap-4 mb-6">
-                  <img src="wellsfargo.png" alt="Wells Fargo" class="h-16 w-16 object-contain">
-                  <div>
-                    <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400">Product Engineer</h3>
-                    <p class="text-lg text-slate-600 dark:text-slate-400">Wells Fargo</p>
-                    <p class="text-base text-slate-500">July 2022 – May 2024</p>
-                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
+            <div class="w-full md:w-5/12 md:pl-8">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <img src="wellsfargo.png" alt="Wells Fargo" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto sm:mx-0">
+                  <div class="text-center sm:text-left">
+                    <h3 class="text-lg sm:text-xl font-bold text-violet-600 dark:text-violet-400">Product Engineer</h3>
+                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400">Wells Fargo</p>
+                    <p class="text-sm sm:text-base text-slate-500">July 2022 – May 2024</p>
+                    <span class="inline-block px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
                   </div>
                 </div>
                 
-                <div class="space-y-3">
-                  <div class="flex items-start gap-3">
+                <div class="space-y-2 sm:space-y-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Led cross-continental teams (10+ engineers/designers in US & India) to analyze customer behavior and define requirements for B2C online banking features, achieving $100K+ annual cost savings and streamlining direct deposit payment processing.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Led cross-continental teams (10+ engineers/designers in US & India) to analyze customer behavior and define requirements for B2C online banking features, achieving $100K+ annual cost savings and streamlining direct deposit payment processing.</p>
                   </div>
-                  <div class="flex items-start gap-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Developed detailed user stories and acceptance criteria for direct deposit rejection systems, modernizing ETL processes and automating manual workflows to enable proactive outreach to 300+ customers/week.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Developed detailed user stories and acceptance criteria for direct deposit rejection systems, modernizing ETL processes and automating manual workflows to enable proactive outreach to 300+ customers/week.</p>
                   </div>
-                  <div class="flex items-start gap-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Spearheaded Agile and CI/CD practices to deliver iterative improvements to the IVR system, boosting performance KPIs (20% faster response times) and ensuring minimal downtime feature rollouts.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Spearheaded Agile and CI/CD practices to deliver iterative improvements to the IVR system, boosting performance KPIs (20% faster response times) and ensuring minimal downtime feature rollouts.</p>
                   </div>
-                  <div class="flex items-start gap-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Optimized product roadmaps and sprint planning, driving end-to-end product delivery with a 12% efficiency gain, increased user adoption, and improved team velocity by +13 story points per sprint through refined backlog prioritization.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Optimized product roadmaps and sprint planning, driving end-to-end product delivery with a 12% efficiency gain, increased user adoption, and improved team velocity by +13 story points per sprint through refined backlog prioritization.</p>
                   </div>
                 </div>
               </div>
@@ -571,37 +691,37 @@
         
         <!-- NITK - Education (2018-2022) -->
         <div class="timeline-item group" data-item="nitk">
-          <div class="flex items-center justify-between">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between">
             <!-- Left Content -->
-            <div class="w-5/12 pr-8">
-              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
-                <div class="flex items-center gap-4 mb-6">
-                  <img src="nitk.png" alt="NITK" class="h-16 w-16 object-contain">
-                  <div>
-                    <h3 class="text-xl font-bold text-sky-600 dark:text-sky-400">Bachelor of Technology, Information Technology</h3>
-                    <p class="text-lg text-slate-600 dark:text-slate-400">National Institute of Technology Karnataka</p>
-                    <p class="text-base text-slate-500">August 2018 - May 2022</p>
-                    <p class="text-base text-slate-500 font-semibold">GPA: 8.17/10.0</p>
-                    <span class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200">Education</span>
+            <div class="w-full md:w-5/12 md:pr-8 mb-4 md:mb-0">
+              <div class="bg-white dark:bg-slate-900/60 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl border border-slate-200 dark:border-white/10 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <img src="nitk.png" alt="NITK" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto sm:mx-0">
+                  <div class="text-center sm:text-left">
+                    <h3 class="text-lg sm:text-xl font-bold text-sky-600 dark:text-sky-400">Bachelor of Technology, Information Technology</h3>
+                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400">National Institute of Technology Karnataka</p>
+                    <p class="text-sm sm:text-base text-slate-500">August 2018 - May 2022</p>
+                    <p class="text-sm sm:text-base text-slate-500 font-semibold">GPA: 8.17/10.0</p>
+                    <span class="inline-block px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200">Education</span>
                   </div>
                 </div>
                 
-                <div class="space-y-3">
-                  <div class="flex items-start gap-3">
+                <div class="space-y-2 sm:space-y-3">
+                  <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-sm text-slate-700 dark:text-slate-300">Coursework: Data Analytics, Database Management, Machine Learning, Information Retrieval, Engineering Management</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Coursework: Data Analytics, Database Management, Machine Learning, Information Retrieval, Engineering Management</p>
                   </div>
                 </div>
               </div>
             </div>
             
             <!-- Timeline Node -->
-            <div class="w-2/12 flex justify-center">
-              <div class="w-8 h-8 bg-sky-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
+            <div class="w-full md:w-2/12 flex justify-center mb-4 md:mb-0">
+              <div class="w-6 h-6 sm:w-8 sm:h-8 bg-sky-500 rounded-full border-4 border-white dark:border-slate-800 shadow-xl group-hover:scale-150 transition-all duration-300"></div>
             </div>
             
             <!-- Right Content (Empty for balance) -->
-            <div class="w-5/12 pl-8"></div>
+            <div class="w-full md:w-5/12 md:pl-8"></div>
           </div>
         </div>
       </div>
@@ -609,71 +729,71 @@
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="mx-auto max-w-6xl px-4 py-12 reveal">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-center">My Skills</h2>
+  <section id="skills" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 reveal">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 sm:mb-12 text-center">My Skills</h2>
     
     <!-- Skills Grid -->
-    <div class="space-y-12">
+    <div class="space-y-8 sm:space-y-12">
       <!-- Product Management -->
       <div>
-        <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400 mb-6 text-center">Product Management</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <h3 class="text-lg sm:text-xl font-bold text-violet-600 dark:text-violet-400 mb-4 sm:mb-6 text-center">Product Management</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
           <!-- Product Strategy -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-route text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-route text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Product Strategy</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Roadmaps & Planning</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Product Strategy</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Roadmaps & Planning</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-violet-600 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Market Research -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-search text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-search text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Market Research</h4>
-              <p class="text-white/80 text-xs leading-relaxed">User & Market Analysis</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Market Research</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">User & Market Analysis</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- A/B Testing -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-chart-line text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-chart-line text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">A/B Testing</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Experimentation</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">A/B Testing</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Experimentation</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Metrics & KPIs -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-tachometer-alt text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-tachometer-alt text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Metrics & KPIs</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Performance Tracking</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Metrics & KPIs</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Performance Tracking</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Prototyping -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-palette text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-palette text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Prototyping</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Design & Mockups</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Prototyping</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Design & Mockups</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 to-rose-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
@@ -686,84 +806,84 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
           <!-- Agile & Scrum -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-sync-alt text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-sync-alt text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Agile & Scrum</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Methodology</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Agile & Scrum</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Methodology</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-sky-600 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Jira -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-tasks text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-tasks text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Jira</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Project Tracking</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Jira</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Project Tracking</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Confluence -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-book text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-book text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Confluence</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Documentation</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Confluence</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Documentation</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Kanban -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-columns text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-columns text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Kanban</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Visual Workflow</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Kanban</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Visual Workflow</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Google Workspace -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fab fa-google text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fab fa-google text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Google Workspace</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Collaboration</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Google Workspace</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Collaboration</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- MS Office -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-file-word text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-file-word text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">MS Office</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Productivity</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">MS Office</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Productivity</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-700 to-blue-800 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Smartsheet -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-table text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-table text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Smartsheet</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Project Management</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Smartsheet</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Project Management</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
@@ -772,16 +892,16 @@
       
       <!-- Technical Skills -->
       <div>
-        <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-6 text-center">Technical Skills</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <h3 class="text-lg sm:text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4 sm:mb-6 text-center">Technical Skills</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 sm:gap-6">
           <!-- SQL -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-database text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 backdrop-blur-sm">
+                <i class="fas fa-database text-white text-lg sm:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">SQL</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Database Queries</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">SQL</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Database Queries</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
@@ -824,96 +944,96 @@
           
           <!-- Microsoft 365 -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-microsoft text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-microsoft text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Microsoft 365</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Productivity Suite</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Microsoft 365</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Productivity Suite</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Python -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fab fa-python text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fab fa-python text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Python</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Programming</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Python</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Programming</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Java -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fab fa-java text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fab fa-java text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Java</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Programming</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Java</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Programming</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- C++ -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <span class="text-white font-bold text-lg">C++</span>
+            <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <span class="text-white font-bold text-xs sm:text-sm md:text-lg">C++</span>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">C++</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Programming</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">C++</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Programming</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-700 to-blue-800 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- JavaScript -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <span class="text-black font-bold text-sm">JS</span>
+            <div class="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <span class="text-black font-bold text-xs sm:text-sm md:text-sm">JS</span>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">JavaScript</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Programming</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">JavaScript</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Programming</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Git -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fab fa-git-alt text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fab fa-git-alt text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Git</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Version Control</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Git</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Version Control</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- MS Azure -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-cloud text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fas fa-cloud text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">MS Azure</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Cloud Platform</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">MS Azure</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Cloud Platform</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Figma -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fab fa-figma text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
+                <i class="fab fa-figma text-white text-lg sm:text-xl md:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Figma</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Design Tool</p>
+              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Figma</h4>
+              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Design Tool</p>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
@@ -929,15 +1049,15 @@
 
 
   <!-- PROJECTS -->
-  <section id="projects" class="mx-auto max-w-6xl px-4 py-12 reveal">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Featured Projects</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <section id="projects" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 reveal">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-6 sm:mb-8">Featured Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       <!-- Project 1 -->
       <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow">
-        <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
-          <div class="flex items-center justify-between mb-3">
-            <h3 class="text-xl font-bold">AI Multi-Agent Financial Advisor</h3>
-            <div class="flex gap-2">
+        <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-4 sm:p-5 tilt-child">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-3">
+            <h3 class="text-lg sm:text-xl font-bold text-center sm:text-left">AI Multi-Agent Financial Advisor</h3>
+            <div class="flex gap-2 justify-center sm:justify-end">
               <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
                 <i class="fab fa-github"></i>
               </a>
@@ -946,10 +1066,10 @@
               </a>
             </div>
           </div>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 text-center sm:text-left">
             Built a prototype AI-driven personal finance platform featuring multi-agent financial advisors that provide users with tailored insights on budgeting, investments, debt, and savings. Conducted user testing with 20 individuals; feedback showed 85% felt the tailored recommendations improved their financial planning confidence.
           </p>
-          <div class="flex flex-wrap gap-2 text-[11px]">
+          <div class="flex flex-wrap gap-2 text-[10px] sm:text-[11px] justify-center sm:justify-start">
             <span class="chip rounded-full px-2 py-1 bg-[#f2ecff] dark:bg-violet-500/20">AI/ML</span>
             <span class="chip rounded-full px-2 py-1 bg-[#e5f6ff] dark:bg-sky-500/20">Multi-Agent</span>
             <span class="chip rounded-full px-2 py-1 bg-[#ffe9f3] dark:bg-fuchsia-500/20">User Testing</span>
@@ -1012,9 +1132,9 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="mx-auto max-w-6xl px-4 py-12 reveal">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Get In Touch</h2>
-    <div class="grid md:grid-cols-2 gap-8">
+  <section id="contact" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 reveal">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-6 sm:mb-8">Get In Touch</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
       <div>
         <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
           I'm always interested in new opportunities and exciting projects. Let's connect and build something amazing together!
@@ -1056,22 +1176,22 @@
         </div>
       </div>
       
-      <div class="card rounded-2xl border border-slate-200 bg-white dark:bg-white/5 dark:border-white/10 p-6">
-        <h3 class="text-xl font-bold mb-4">Send me a message</h3>
-        <form class="space-y-4">
+      <div class="card rounded-2xl border border-slate-200 bg-white dark:bg-white/5 dark:border-white/10 p-4 sm:p-6">
+        <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center sm:text-left">Send me a message</h3>
+        <form class="space-y-3 sm:space-y-4">
           <div>
-            <label class="block text-sm font-medium mb-2">Name</label>
-            <input type="text" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors" placeholder="Your name">
+            <label class="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Name</label>
+            <input type="text" class="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors text-sm" placeholder="Your name">
           </div>
           <div>
-            <label class="block text-sm font-medium mb-2">Email</label>
-            <input type="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors" placeholder="your.email@example.com">
+            <label class="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Email</label>
+            <input type="email" class="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors text-sm" placeholder="your.email@example.com">
           </div>
           <div>
-            <label class="block text-sm font-medium mb-2">Message</label>
-            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors" placeholder="Your message..."></textarea>
+            <label class="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Message</label>
+            <textarea rows="3" class="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors text-sm" placeholder="Your message..."></textarea>
           </div>
-          <button type="submit" class="w-full bg-gradient-to-r from-violet-500 to-violet-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-violet-600 hover:to-violet-700 transition-all duration-200 transform hover:scale-[1.02]">
+          <button type="submit" class="w-full bg-gradient-to-r from-violet-500 to-violet-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold hover:from-violet-600 hover:to-violet-700 transition-all duration-200 transform hover:scale-[1.02] text-sm sm:text-base">
             Send Message
           </button>
         </form>
@@ -1167,6 +1287,28 @@
         el.style.transform = `perspective(800px) rotateX(${(-y*r).toFixed(2)}deg) rotateY(${(x*r).toFixed(2)}deg)`;
       });
       el.addEventListener('mouseleave', ()=>{ el.style.transform=''; });
+    });
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
     });
 
     // Skill bar animations
