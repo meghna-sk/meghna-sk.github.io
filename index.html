@@ -1543,18 +1543,18 @@
       
       <div class="card rounded-2xl border border-slate-200 bg-white dark:bg-white/5 dark:border-white/10 p-4 sm:p-6">
         <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center sm:text-left">Send me a message</h3>
-        <form class="space-y-3 sm:space-y-4">
+        <form action="https://formspree.io/f/xkgzegvb" method="POST" class="space-y-3 sm:space-y-4">
           <div>
             <label class="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Name</label>
-            <input type="text" class="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors text-sm" placeholder="Your name">
+            <input type="text" name="name" required class="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors text-sm" placeholder="Your name">
           </div>
           <div>
             <label class="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Email</label>
-            <input type="email" class="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors text-sm" placeholder="your.email@example.com">
+            <input type="email" name="email" required class="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors text-sm" placeholder="your.email@example.com">
           </div>
           <div>
             <label class="block text-xs sm:text-sm font-medium mb-1 sm:mb-2">Message</label>
-            <textarea rows="3" class="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors text-sm" placeholder="Your message..."></textarea>
+            <textarea name="message" rows="3" required class="w-full px-3 sm:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-colors text-sm" placeholder="Your message..."></textarea>
           </div>
           <button type="submit" class="w-full bg-gradient-to-r from-violet-500 to-violet-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold hover:from-violet-600 hover:to-violet-700 transition-all duration-200 transform hover:scale-[1.02] text-sm sm:text-base">
             Send Message
@@ -1833,8 +1833,43 @@
     const contactForm = document.querySelector('form');
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      // Add your form submission logic here
-      alert('Thank you for your message! I\'ll get back to you soon.');
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      
+      // Show loading state
+      submitButton.textContent = 'Sending...';
+      submitButton.disabled = true;
+      
+      // Submit to Formspree
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Success
+          alert('Thank you for your message! I\'ll get back to you soon.');
+          contactForm.reset();
+        } else {
+          // Error
+          alert('Sorry, there was an error sending your message. Please try again or email me directly.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Sorry, there was an error sending your message. Please try again or email me directly.');
+      })
+      .finally(() => {
+        // Reset button state
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      });
     });
 
 
