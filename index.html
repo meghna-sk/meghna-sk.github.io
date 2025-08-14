@@ -112,6 +112,40 @@
       justify-content: space-between;
     }
     
+    /* Timeline bullet formatting improvements */
+    .timeline-item .space-y-2 > div,
+    .timeline-item .space-y-3 > div {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    .timeline-item .space-y-2 > div .w-2,
+    .timeline-item .space-y-3 > div .w-2 {
+      flex-shrink: 0;
+      margin-top: 0.5rem;
+    }
+    
+    .timeline-item .space-y-2 > div p,
+    .timeline-item .space-y-3 > div p {
+      flex: 1;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    /* Responsive timeline improvements */
+    @media (max-width: 640px) {
+      .timeline-item .space-y-2 > div,
+      .timeline-item .space-y-3 > div {
+        gap: 0.5rem;
+      }
+      
+      .timeline-item .space-y-2 > div .w-2,
+      .timeline-item .space-y-3 > div .w-2 {
+        margin-top: 0.375rem;
+      }
+    }
+    
 
     
     /* Particle effects */
@@ -747,12 +781,12 @@
               I'm  Meghna
             </h2>
             <p class="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium">
-              Aspiring Product Manager, Full-Stack Developer and AI Enthusiast
+              Product Manager & Full-Stack Developer passionate about AI
             </p>
           </div>
           
           <p class="text-sm sm:text-base md:text-lg text-slate-700 dark:text-slate-300 leading-relaxed max-w-lg mx-auto md:mx-0">
-            <strong>Outcomes-focused:</strong> Built products that improved user confidence by 85% and achieved $100K+ cost savings. <strong>Cross-discipline:</strong> Design in Figma, code in Python/JavaScript, and think strategically in product. <strong>Ownership:</strong> Independent side projects and end-to-end product development.
+            I'm that person who gets excited about turning coffee-fueled ideas into products that people actually want to use ☕✨
           </p>
           
           <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
@@ -832,11 +866,15 @@
                 <div class="space-y-2 sm:space-y-3">
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Deans List - Fall Semester 2024, Spring Semester 2025</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Dean's List recipient for academic excellence in Fall 2024 and Spring 2025 semesters</p>
                   </div>
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Coursework: Product Management, Market Strategy, A/B Testing, Agentic Technology, Economic Analysis, Statistics</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Core coursework in Product Management, Market Strategy, A/B Testing, and Agentic Technology</p>
+                  </div>
+                  <div class="flex items-start gap-2 sm:gap-3">
+                    <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Advanced studies in Economic Analysis, Statistics, and Data-Driven Decision Making</p>
                   </div>
                 </div>
               </div>
@@ -879,15 +917,19 @@
                 <div class="space-y-2 sm:space-y-3">
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Conducted user research with 25 TPMs to understand gaps in documentation and workflow tools, prioritizing opportunities to improve knowledge management and reduce friction for web-based internal tools.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Led user research with 25 Technical Product Managers to identify critical gaps in documentation and workflow tools, uncovering opportunities to streamline knowledge management and reduce friction in internal web tools</p>
                   </div>
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300"><strong>Outcome:</strong> Launched AI-powered tools that boosted knowledge sharing by 50% and reduced manual work by 30%. <strong>Cross-discipline:</strong> Designed user flows in Figma, built working prototype with Python, and conducted user research. <strong>Ownership:</strong> Independently drove solution adoption across Intuit.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Designed and launched AI-powered knowledge sharing tools that improved team collaboration by 50% and reduced manual documentation work by 30%</p>
                   </div>
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Standardized and launched a centralized knowledge repository with guides, playbooks, and onboarding, improving discoverability, version control, and cross-team adoption for fiscal year 2026 programs.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Built and deployed a centralized knowledge repository with comprehensive guides, playbooks, and onboarding materials, improving cross-team adoption and version control for FY26 programs</p>
+                  </div>
+                  <div class="flex items-start gap-2 sm:gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Independently drove solution adoption across multiple Intuit teams, demonstrating end-to-end product ownership from research to deployment</p>
                   </div>
                 </div>
               </div>
@@ -914,15 +956,19 @@
                 <div class="space-y-2 sm:space-y-3">
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Conducted internal user research with Philips employees and analyzed platform metrics to identify backlog management gaps and uncover GenAI opportunities across 10+ product teams.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Led user research with Philips employees and analyzed platform metrics to identify critical gaps in backlog management and uncover GenAI opportunities across 10+ product teams</p>
                   </div>
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300"><strong>Cross-discipline:</strong> Designed wireframes in Figma, built functional prototype with Python/Flask, and conducted technical architecture planning.<br><br><strong>Ownership:</strong> Independently drove product vision and technical implementation.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Designed comprehensive wireframes in Figma and built functional prototypes with Python/Flask to validate technical architecture and user experience</p>
                   </div>
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300"><strong>Outcome:</strong> Projected 40% reduction in backlog search time.<br><br><strong>Ownership:</strong> Led stakeholder presentations to Philips leadership and drove product strategy alignment.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Projected 40% reduction in backlog search time through intelligent search algorithms and improved user interface design</p>
+                  </div>
+                  <div class="flex items-start gap-2 sm:gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Presented product strategy and technical roadmap to Philips leadership, driving alignment and securing stakeholder buy-in for implementation</p>
                   </div>
                 </div>
               </div>
@@ -955,7 +1001,7 @@
                 <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                   <img src="wellsfargo.png" alt="Wells Fargo" class="h-12 w-12 sm:h-16 sm:w-16 object-contain mx-auto sm:mx-0">
                   <div class="text-center sm:text-left">
-                    <h3 class="text-lg sm:text-xl font-bold text-violet-600 dark:text-violet-400">Product Engineer</h3>
+                    <h3 class="text-lg sm:text-xl font-bold text-violet-600 dark:text-violet-400">Product Engineer & Technical Product Manager</h3>
                     <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400">Wells Fargo</p>
                     <p class="text-sm sm:text-base text-slate-500">July 2022 – May 2024</p>
                     <span class="inline-block px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200">Work Experience</span>
@@ -965,19 +1011,23 @@
                 <div class="space-y-2 sm:space-y-3">
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300"><strong>Outcome:</strong> Achieved $100K+ annual cost savings and streamlined direct deposit processing.<br><br><strong>Cross-discipline:</strong> Led engineering teams, conducted data analysis, and designed user requirements.<br><br><strong>Ownership:</strong> Managed cross-continental teams of 10+ engineers/designers.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Led product development for direct deposit processing systems, achieving $100K+ annual cost savings through process optimization and automation</p>
                   </div>
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300"><strong>Outcome:</strong> Enabled proactive outreach to 300+ customers/week through automated workflows.<br><br><strong>Cross-discipline:</strong> Designed technical requirements, modernized ETL processes, and implemented automation.<br><br><strong>Ownership:</strong> Independently drove technical implementation and process improvement.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Designed and implemented automated customer outreach workflows, enabling proactive engagement with 300+ customers per week</p>
                   </div>
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300"><strong>Outcome:</strong> Boosted IVR performance by 20% faster response times.<br><br><strong>Cross-discipline:</strong> Implemented CI/CD practices and technical improvements.<br><br><strong>Ownership:</strong> Spearheaded Agile practices and technical delivery.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Optimized Interactive Voice Response (IVR) systems, improving response times by 20% and enhancing customer experience</p>
                   </div>
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300"><strong>Outcome:</strong> Achieved 12% efficiency gain and +13 story points per sprint.<br><br><strong>Cross-discipline:</strong> Optimized technical roadmaps and engineering processes.<br><br><strong>Ownership:</strong> Drove end-to-end product delivery and team performance.</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Managed cross-continental engineering teams of 10+ developers, driving 12% efficiency gains and +13 story points per sprint</p>
+                  </div>
+                  <div class="flex items-start gap-2 sm:gap-3">
+                    <div class="w-2 h-2 bg-violet-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Implemented modern CI/CD practices and Agile methodologies, establishing technical roadmaps and driving end-to-end product delivery</p>
                   </div>
                 </div>
               </div>
@@ -1005,7 +1055,11 @@
                 <div class="space-y-2 sm:space-y-3">
                   <div class="flex items-start gap-2 sm:gap-3">
                     <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Coursework: Data Analytics, Database Management, Machine Learning, Information Retrieval, Engineering Management</p>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Core coursework in Data Analytics, Database Management, and Machine Learning</p>
+                  </div>
+                  <div class="flex items-start gap-2 sm:gap-3">
+                    <div class="w-2 h-2 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300">Advanced studies in Information Retrieval, Engineering Management, and Software Development</p>
                   </div>
                 </div>
               </div>
