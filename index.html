@@ -60,6 +60,58 @@
     .marquee:hover .marquee__track{animation-play-state:paused}
     @keyframes marquee{from{transform:translateX(0)} to{transform:translateX(-50%)}}
     
+    /* Uniform project card heights */
+    .tilt {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .tilt-child {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .tilt-child p {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    
+    /* Ensure project grid maintains uniform heights */
+    #projects .grid {
+      align-items: stretch;
+    }
+    
+    #projects .grid > * {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Skills section responsive improvements */
+    #skills .grid {
+      align-items: stretch;
+    }
+    
+    #skills .grid > * {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Ensure skills cards have consistent sizing */
+    #skills .group {
+      height: 100%;
+    }
+    
+    #skills .group > div {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
 
     
     /* Particle effects */
@@ -168,6 +220,58 @@
       .space-y-16 > * + * {
         margin-top: 2.5rem;
       }
+      
+      /* Mobile bullet point improvements */
+      .timeline-item p {
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+      }
+      
+      .timeline-item br {
+        display: block;
+        content: "";
+        margin-top: 0.5rem;
+      }
+      
+      .timeline-item br + br {
+        margin-top: 0.75rem;
+      }
+      
+      /* Project card improvements for mobile */
+      .tilt p {
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+      }
+      
+      .tilt br {
+        display: block;
+        content: "";
+        margin-top: 0.5rem;
+      }
+      
+      .tilt br + br {
+        margin-top: 0.75rem;
+      }
+      
+      /* Ensure uniform card heights on mobile */
+      .tilt {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tilt-child {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tilt-child p {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
     }
     
     /* Better touch targets for mobile */
@@ -193,6 +297,56 @@
       .text-xl {
         font-size: 1.125rem;
       }
+      
+      /* Tablet bullet point improvements */
+      .timeline-item p {
+        line-height: 1.7;
+      }
+      
+      .timeline-item br {
+        display: block;
+        content: "";
+        margin-top: 0.75rem;
+      }
+      
+      .timeline-item br + br {
+        margin-top: 1rem;
+      }
+      
+      /* Project card improvements for tablet */
+      .tilt p {
+        line-height: 1.6;
+      }
+      
+      .tilt br {
+        display: block;
+        content: "";
+        margin-top: 0.5rem;
+      }
+      
+      .tilt br + br {
+        margin-top: 0.75rem;
+      }
+      
+      /* Ensure uniform card heights on tablet */
+      .tilt {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tilt-child {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tilt-child p {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
     }
     
     /* Large screen optimizations */
@@ -203,6 +357,104 @@
       
       .gap-12 {
         gap: 3rem;
+      }
+      
+      /* Desktop bullet point optimizations */
+      .timeline-item p {
+        line-height: 1.8;
+      }
+      
+      .timeline-item br {
+        display: block;
+        content: "";
+        margin-top: 1rem;
+      }
+      
+      .timeline-item br + br {
+        margin-top: 1.25rem;
+      }
+      
+      .tilt p {
+        line-height: 1.7;
+      }
+      
+      .tilt br {
+        display: block;
+        content: "";
+        margin-top: 0.75rem;
+      }
+      
+      .tilt br + br {
+        margin-top: 1rem;
+      }
+      
+      /* Ensure uniform card heights on desktop */
+      .tilt {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tilt-child {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tilt-child p {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+    }
+    
+    /* Extra small screen optimizations */
+    @media (max-width: 480px) {
+      .timeline-item p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+      
+      .timeline-item br {
+        margin-top: 0.375rem;
+      }
+      
+      .timeline-item br + br {
+        margin-top: 0.5rem;
+      }
+      
+      .tilt p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+      
+      .tilt br {
+        margin-top: 0.375rem;
+      }
+      
+      .tilt br + br {
+        margin-top: 0.5rem;
+      }
+      
+      /* Ensure uniform card heights on extra small screens */
+      .tilt {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tilt-child {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tilt-child p {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
       }
     }
     
@@ -363,6 +615,50 @@
     .timeline-item {
       opacity: 1 !important;
       transform: translateY(0) !important;
+    }
+
+    /* Project Modal Styles */
+    #projectModal {
+      animation: fadeIn 0.3s ease-out;
+    }
+    
+    #projectModal .bg-white,
+    #projectModal .dark\\:bg-slate-900 {
+      animation: slideUp 0.3s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    /* Modal scrollbar styling */
+    #projectModal .overflow-y-auto::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    #projectModal .overflow-y-auto::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    #projectModal .overflow-y-auto::-webkit-scrollbar-thumb {
+      background: rgba(139, 92, 246, 0.3);
+      border-radius: 3px;
+    }
+    
+    #projectModal .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+      background: rgba(139, 92, 246, 0.5);
     }
 
   </style>
@@ -737,7 +1033,7 @@
       <!-- Product Management -->
       <div>
         <h3 class="text-lg sm:text-xl font-bold text-violet-600 dark:text-violet-400 mb-4 sm:mb-6 text-center">Product Management</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           <!-- Product Strategy -->
           <div class="group relative">
             <div class="bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
@@ -895,51 +1191,59 @@
       <!-- Technical Skills -->
       <div>
         <h3 class="text-lg sm:text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4 sm:mb-6 text-center">Technical Skills</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 sm:gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
           <!-- SQL -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 backdrop-blur-sm">
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform h-full flex flex-col">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 backdrop-blur-sm flex-shrink-0">
                 <i class="fas fa-database text-white text-lg sm:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">SQL</h4>
-              <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Database Queries</p>
+              <div class="flex-1 flex flex-col justify-center">
+                <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">SQL</h4>
+                <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Database Queries</p>
+              </div>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Teradata -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-server text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform h-full flex flex-col">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 backdrop-blur-sm flex-shrink-0">
+                <i class="fas fa-server text-white text-lg sm:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Teradata</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Data Warehouse</p>
+              <div class="flex-1 flex flex-col justify-center">
+                <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Teradata</h4>
+                <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Data Warehouse</p>
+              </div>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Power BI -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-chart-bar text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform h-full flex flex-col">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 backdrop-blur-sm flex-shrink-0">
+                <i class="fas fa-chart-bar text-white text-lg sm:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Power BI</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Data Visualization</p>
+              <div class="flex-1 flex flex-col justify-center">
+                <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Power BI</h4>
+                <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Data Visualization</p>
+              </div>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
           
           <!-- Tableau -->
           <div class="group relative">
-            <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform">
-              <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
-                <i class="fas fa-chart-pie text-white text-2xl"></i>
+            <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-rotate-2 transform h-full flex flex-col">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-3 sm:mb-4 backdrop-blur-sm flex-shrink-0">
+                <i class="fas fa-chart-pie text-white text-lg sm:text-2xl"></i>
               </div>
-              <h4 class="text-white font-bold text-sm mb-2">Tableau</h4>
-              <p class="text-white/80 text-xs leading-relaxed">Analytics Platform</p>
+              <div class="flex-1 flex flex-col justify-center">
+                <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">Tableau</h4>
+                <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Analytics Platform</p>
+              </div>
             </div>
             <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500 -z-10"></div>
           </div>
@@ -996,7 +1300,7 @@
           <div class="group relative">
             <div class="bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:rotate-2 transform">
               <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white/20 rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 backdrop-blur-sm">
-                <span class="text-black font-bold text-xs sm:text-sm md:text-sm">JS</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-sm">JS</span>
               </div>
               <h4 class="text-white font-bold text-xs sm:text-sm mb-1 sm:mb-2">JavaScript</h4>
               <p class="text-white/80 text-[10px] sm:text-xs leading-relaxed">Programming</p>
@@ -1055,23 +1359,26 @@
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-6 sm:mb-8">Featured Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       <!-- Project 1 -->
-      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow">
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow cursor-pointer" onclick="openProjectModal('project1'); event.stopPropagation();">
         <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-4 sm:p-5 tilt-child">
+          <!-- Project Image -->
+          <div class="mb-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+            <img src="FinancialPlanner.jpg" alt="AI Multi-Agent Financial Advisor Demo" class="w-full h-32 sm:h-40 object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 mb-3">
             <h3 class="text-lg sm:text-xl font-bold text-center sm:text-left">AI Multi-Agent Financial Advisor</h3>
             <div class="flex gap-2 justify-center sm:justify-end">
-              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
+              <a href="https://github.com/iamreubengm/abm_final_project" class="text-gray-500 hover:text-violet-600 transition-colors" target="_blank" title="GitHub Repository">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
-                <i class="fas fa-external-link-alt"></i>
+              <a href="https://docs.google.com/presentation/d/1KTzMhezzo-vhiwIVfUyhQ0dN2fFa32iJRr0z1oIxt2c/edit?usp=sharing" class="text-gray-500 hover:text-violet-600 transition-colors" target="_blank" title="Presentation">
+                <i class="fas fa-file-powerpoint"></i>
               </a>
             </div>
           </div>
           <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 text-center sm:text-left">
-            <strong>Outcome:</strong> 85% of users reported improved financial planning confidence after using the platform.<br><br>
-            <strong>Cross-discipline:</strong> Designed user flows in Figma, built working prototype with Python/Flask, and conducted user research.<br><br>
-            <strong>Ownership:</strong> Independently developed from concept to user testing, demonstrating full-stack development and product thinking.
+            AI-powered financial planning platform with multi-agent advisors that improved user confidence by 85%.
           </p>
           <div class="flex flex-wrap gap-2 text-[10px] sm:text-[11px] justify-center sm:justify-start">
             <span class="chip rounded-full px-2 py-1 bg-[#f2ecff] dark:bg-violet-500/20">AI/ML</span>
@@ -1082,50 +1389,53 @@
       </article>
 
       <!-- Project 2 -->
-      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow">
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow cursor-pointer" onclick="openProjectModal('project2'); event.stopPropagation();">
         <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
+          <!-- Project Image -->
+          <div class="mb-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+            <img src="ab_skincare.jpg" alt="A/B Testing Skincare Research" class="w-full h-32 sm:h-40 object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          
           <div class="flex items-center justify-between mb-3">
             <h3 class="text-xl font-bold">A/B Testing Emotion vs. Science in Skincare</h3>
             <div class="flex gap-2">
-              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
+              <a href="https://docs.google.com/presentation/d/1u03Cb3L2WGjUxA0LjEmWxT3rnCqBkyTceBGLps-ITr8/edit?usp=sharing" class="text-gray-500 hover:text-violet-600 transition-colors" target="_blank" title="Presentation">
                 <i class="fas fa-file-powerpoint"></i>
+              </a>
+              <a href="https://docs.google.com/document/d/170UcEVx2G5vKIoO19PLJEAh4XyhT4KVo-a4jS7UbfaE/edit?usp=sharing" class="text-gray-500 hover:text-violet-600 transition-colors" target="_blank" title="Research Report">
+                <i class="fas fa-file-alt"></i>
               </a>
             </div>
           </div>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-            <strong>Outcome:</strong> Discovered emotional language increases purchase intent while scientific language builds trust—enabling brands to optimize messaging for both conversion and credibility.<br><br>
-            <strong>Cross-discipline:</strong> Designed A/B test experiments, analyzed data with Python/pandas, and created presentation in PowerPoint.<br><br>
-            <strong>Ownership:</strong> Self-initiated research project demonstrating data-driven product strategy and experimental design skills.
+            Research project discovering emotional language increases purchase intent while scientific language builds trust.
           </p>
           <div class="flex flex-wrap gap-2 text-[11px]">
             <span class="chip rounded-full px-2 py-1 bg-[#e5fff3] dark:bg-emerald-500/20">A/B Testing</span>
-            <span class="chip rounded-full px-2 py-1 bg-[#fff7e5] dark:bg-amber-500/20">Data Analysis</span>
+            <span class="chip rounded-full px-2 py-1 bg-[#ffe9f3] dark:bg-amber-500/20">Data Analysis</span>
             <span class="chip rounded-full px-2 py-1 bg-[#e7f0ff] dark:bg-indigo-500/20">Product Strategy</span>
           </div>
         </div>
       </article>
 
       <!-- Project 3 -->
-      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow">
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow cursor-pointer" onclick="openProjectModal('project3'); event.stopPropagation();">
         <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
+          <!-- Project Image -->
+          <div class="mb-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+            <img src="rebalancer.jpg" alt="AI Portfolio Rebalancer System" class="w-full h-32 sm:h-40 object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          
           <div class="flex items-center justify-between mb-3">
             <h3 class="text-xl font-bold">AI Portfolio Rebalancer</h3>
             <div class="flex gap-2">
-              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
+              <a href="https://github.com/meghna-sk/Financial-Portfolio-Rebalancer" class="text-gray-500 hover:text-violet-600 transition-colors" target="_blank" title="GitHub Repository">
                 <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="text-gray-500 hover:text-violet-600 transition-colors">
-                <i class="fas fa-external-link-alt"></i>
               </a>
             </div>
           </div>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-            <strong>Outcome:</strong> Built functional AI system that automatically analyzes portfolios and provides actionable rebalancing recommendations.<br><br>
-            <strong>Cross-discipline:</strong> Designed system architecture, implemented with Python/LangChain, and integrated multiple LLM APIs.<br><br>
-            <strong>Ownership:</strong> Independent side project showcasing advanced AI engineering, API integration, and financial technology skills.
+            AI system that automatically analyzes portfolios and provides actionable rebalancing recommendations using multiple LLM APIs.
           </p>
           <div class="flex flex-wrap gap-2 text-[11px]">
             <span class="chip rounded-full px-2 py-1 bg-[#ecfbff] dark:bg-sky-400/20">LangChain</span>
@@ -1136,23 +1446,23 @@
       </article>
 
       <!-- Project 4 -->
-      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow">
+      <article class="tilt group rounded-2xl bg-gradient-to-br from-white to-white dark:from-white/5 dark:to-white/10 p-[1px] glow cursor-pointer" onclick="openProjectModal('project4'); event.stopPropagation();">
         <div class="rounded-2xl bg-white dark:bg-slate-900/60 p-5 tilt-child">
+          <!-- Project Image - MealWise Wireframe -->
+          <div class="mb-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+            <img src="MealWise - WireFrames.jpg" alt="MealWise App Wireframes and Design" class="w-full h-32 sm:h-40 object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          
           <div class="flex items-center justify-between mb-3">
             <h3 class="text-xl font-bold">MealWise: AI-Powered Budget Meal Planning App</h3>
             <div class="flex gap-2">
-              <a href="Meghna Suraj Kashyap Product Workbook.docx" class="text-gray-500 hover:text-violet-600 transition-colors" download>
+              <a href="https://drive.google.com/file/d/1T6ZJOemMQuBH2t41WM2V0LwfaLDCkJ01/view?usp=sharing" class="text-gray-500 hover:text-violet-600 transition-colors" target="_blank" title="Product Workbook">
                 <i class="fas fa-file-word"></i>
-              </a>
-              <a href="Meghna Suraj Kashyap Product Workbook.docx" class="text-gray-500 hover:text-violet-600 transition-colors" target="_blank">
-                <i class="fas fa-external-link-alt"></i>
               </a>
             </div>
           </div>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-            <strong>Outcome:</strong> Identified $158M market opportunity and designed complete go-to-market strategy for AI meal planning app.<br><br>
-            <strong>Cross-discipline:</strong> Conducted user research, designed wireframes in Figma, and built functional requirements with technical specifications.<br><br>
-            <strong>Ownership:</strong> Self-directed product strategy project demonstrating end-to-end product thinking from market research to technical implementation planning.
+            Complete product strategy for AI meal planning app with $158M market opportunity and go-to-market plan.
           </p>
           <div class="flex flex-wrap gap-2 text-[11px]">
             <span class="chip rounded-full px-2 py-1 bg-[#fff0e5] dark:bg-orange-500/20">Product Strategy</span>
@@ -1165,6 +1475,26 @@
 
     </div>
   </section>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
+    <div class="flex items-center justify-center min-h-screen p-4">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <!-- Modal Header -->
+        <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+          <h2 id="modalTitle" class="text-2xl font-bold text-gray-900 dark:text-white"></h2>
+          <button onclick="closeProjectModal()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        
+        <!-- Modal Content -->
+        <div id="modalContent" class="p-6">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- CONTACT -->
   <section id="contact" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 reveal">
@@ -1239,6 +1569,116 @@
   </footer>
 
   <script>
+    // Project Modal functionality - Global functions
+    function openProjectModal(projectId) {
+      console.log('Opening modal for project:', projectId);
+      const modal = document.getElementById('projectModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
+      
+      if (!modal || !modalTitle || !modalContent) {
+        console.error('Modal elements not found:', { modal, modalTitle, modalContent });
+        return;
+      }
+      
+      // Project data
+      const projects = {
+        project1: {
+          title: 'AI Multi-Agent Financial Advisor',
+          image: '<div class="w-full h-64 rounded-xl overflow-hidden mb-6"><img src="FinancialPlanner.jpg" alt="AI Multi-Agent Financial Advisor Demo" class="w-full h-64 object-cover"></div>',
+          description: '<p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"><strong>Outcome:</strong> 85% of users reported improved financial planning confidence after using the platform.<br><br><strong>Cross-discipline:</strong> Designed user flows in Figma, built working prototype with Python/Flask, and conducted user research.<br><br><strong>Ownership:</strong> Independently developed from concept to user testing, demonstrating full-stack development and product thinking.</p>',
+          tags: ['AI/ML', 'Multi-Agent', 'User Testing', 'Python', 'Flask', 'Figma'],
+          links: [
+            { icon: 'fab fa-github', text: 'GitHub Repository', url: 'https://github.com/iamreubengm/abm_final_project' },
+            { icon: 'fas fa-file-powerpoint', text: 'Presentation', url: 'https://docs.google.com/presentation/d/1KTzMhezzo-vhiwIVfUyhQ0dN2fFa32iJRr0z1oIxt2c/edit?usp=sharing' }
+          ]
+        },
+        project2: {
+          title: 'A/B Testing Emotion vs. Science in Skincare',
+          image: '<div class="w-full h-64 rounded-xl overflow-hidden mb-6"><img src="ab_skincare.jpg" alt="A/B Testing Skincare Research" class="w-full h-64 object-cover"></div>',
+          description: '<p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"><strong>Outcome:</strong> Discovered emotional language increases purchase intent while scientific language builds trust—enabling brands to optimize messaging for both conversion and credibility.<br><br><strong>Cross-discipline:</strong> Designed A/B test experiments, analyzed data with Python/pandas, and created presentation in PowerPoint.<br><br><strong>Ownership:</strong> Self-initiated research project demonstrating data-driven product strategy and experimental design skills.</p>',
+          tags: ['A/B Testing', 'Data Analysis', 'Product Strategy', 'Python', 'Pandas'],
+          links: [
+            { icon: 'fas fa-file-powerpoint', text: 'Presentation', url: 'https://docs.google.com/presentation/d/1u03Cb3L2WGjUxA0LjEmWxT3rnCqBkyTceBGLps-ITr8/edit?usp=sharing' },
+            { icon: 'fas fa-file-alt', text: 'Research Report', url: 'https://docs.google.com/document/d/170UcEVx2G5vKIoO19PLJEAh4XyhT4KVo-a4jS7UbfaE/edit?usp=sharing' }
+          ]
+        },
+        project3: {
+          title: 'AI Portfolio Rebalancer',
+          image: '<div class="w-full h-64 rounded-xl overflow-hidden mb-6"><img src="rebalancer.jpg" alt="AI Portfolio Rebalancer System" class="w-full h-64 object-cover"></div>',
+          description: '<p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"><strong>Outcome:</strong> Built functional AI system that automatically analyzes portfolios and provides actionable rebalancing recommendations.<br><br><strong>Cross-discipline:</strong> Designed system architecture, implemented with Python/LangChain, and integrated multiple LLM APIs.<br><br><strong>Ownership:</strong> Independent side project showcasing advanced AI engineering, API integration, and financial technology skills.</p>',
+          tags: ['LangChain', 'Multi-LLM', 'Financial AI', 'Python', 'API Integration'],
+          links: [
+            { icon: 'fab fa-github', text: 'GitHub Repository', url: 'https://github.com/meghna-sk/Financial-Portfolio-Rebalancer' }
+          ]
+        },
+        project4: {
+          title: 'MealWise: AI-Powered Budget Meal Planning App',
+          image: '<div class="w-full h-64 rounded-xl overflow-hidden mb-6"><img src="MealWise - WireFrames.jpg" alt="MealWise App Wireframes and Design" class="w-full h-64 object-cover"></div>',
+          description: '<p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"><strong>Outcome:</strong> Identified $158M market opportunity and designed complete go-to-market strategy for AI meal planning app.<br><br><strong>Cross-discipline:</strong> Conducted user research, designed wireframes in Figma, and built functional requirements with technical specifications.<br><br><strong>Ownership:</strong> Self-directed product strategy project demonstrating end-to-end product thinking from market research to technical implementation planning.<br><br><strong>Deliverable:</strong> Comprehensive product workbook available for download and viewing.</p>',
+          tags: ['Product Strategy', 'Market Analysis', 'Go-to-Market', 'User Research', 'Figma'],
+          links: [
+            { icon: 'fas fa-file-word', text: 'Product Workbook', url: 'https://drive.google.com/file/d/1T6ZJOemMQuBH2t41WM2V0LwfaLDCkJ01/view?usp=sharing' }
+          ]
+        }
+      };
+      
+      const project = projects[projectId];
+      if (project) {
+        modalTitle.textContent = project.title;
+        
+        let linksHtml = '';
+        if (project.links && project.links.length > 0) {
+          linksHtml = '<div class="flex flex-wrap gap-3 mb-6"><h4 class="w-full text-lg font-semibold mb-3">Project Links:</h4>';
+          project.links.forEach(link => {
+            linksHtml += `<a href="${link.url}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-violet-100 dark:bg-violet-900/20 text-violet-700 dark:text-violet-300 rounded-lg hover:bg-violet-200 dark:hover:bg-violet-900/40 transition-colors"><i class="${link.icon}"></i>${link.text}</a>`;
+          });
+          linksHtml += '</div>';
+        }
+        
+        let tagsHtml = '';
+        if (project.tags && project.tags.length > 0) {
+          tagsHtml = '<div class="flex flex-wrap gap-2 mb-6"><h4 class="w-full text-lg font-semibold mb-3">Technologies & Skills:</h4>';
+          project.tags.forEach(tag => {
+            tagsHtml += `<span class="chip rounded-full px-3 py-1 bg-violet-100 dark:bg-violet-900/20 text-violet-700 dark:text-violet-300 text-sm">${tag}</span>`;
+          });
+          tagsHtml += '</div>';
+        }
+        
+        modalContent.innerHTML = `
+          ${project.image}
+          ${project.description}
+          ${linksHtml}
+          ${tagsHtml}
+        `;
+        
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    function closeProjectModal() {
+      const modal = document.getElementById('projectModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Project Modal event listeners - Global
+    // Close modal when clicking outside
+    document.addEventListener('click', function(e) {
+      const modal = document.getElementById('projectModal');
+      if (modal && e.target === modal) {
+        closeProjectModal();
+      }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeProjectModal();
+      }
+    });
+    
     // Wait for DOM to be fully loaded
     document.addEventListener('DOMContentLoaded', function() {
       // Year
@@ -1323,6 +1763,10 @@
       });
       el.addEventListener('mouseleave', ()=>{ el.style.transform=''; });
     });
+
+
+    
+
 
     // Mobile menu functionality
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
